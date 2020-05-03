@@ -7,6 +7,7 @@ class DiseaseDTO
 	
 	// Data
 	public $id;
+	public $clinicID;
 	public $title;
 	public $airSpread;
 	public $immunity;

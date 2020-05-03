@@ -25,8 +25,9 @@ class SymptomService extends Service
 		if (!$this->database || $this->database->connect_errno)
 			return $this->DB_ERROR;
 		
-		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`title`, `description`)".
+		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`clinic_id`, `title`, `description`)".
 						   "VALUES (".
+						   "'".$dto->clinicID."',".
 						   "'".$dto->title."',".
 						   "'".$dto->description."');")) {
 			$lastID = $this->getLastID();
@@ -57,6 +58,7 @@ class SymptomService extends Service
 				$dto = new SymptomDTO;
 					
 				$dto->id = $res['symptom_id'];
+				$dto->clinicID = $res['clinic_id'];
 				$dto->title = $res['title'];
 				$dto->description = $res['description'];
 				
@@ -83,6 +85,37 @@ class SymptomService extends Service
 				$dto = new SymptomDTO;
 					
 				$dto->id = $res['symptom_id'];
+				$dto->clinicID = $res['clinic_id'];
+				$dto->title = $res['title'];
+				$dto->description = $res['description'];
+				
+				array_push($symptoms, $dto);
+				
+			}
+			
+			if (!empty($symptoms))
+				return new Response($this->SUCCESS->status, $symptoms);
+		}
+		
+		return $this->NOT_FOUND;
+		
+	}
+	
+	public function getSymptomsByClinicID($clinicID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return $this->DB_ERROR;
+		
+		if ($result = $this->database->query("SELECT `".$this->DB_TABLE."`.* FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`clinic_id`='".$clinicID."';")) {
+			
+			$symptoms = array();
+			
+			while ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				$dto = new SymptomDTO;
+					
+				$dto->id = $res['symptom_id'];
+				$dto->clinicID = $res['clinic_id'];
 				$dto->title = $res['title'];
 				$dto->description = $res['description'];
 				
@@ -104,6 +137,23 @@ class SymptomService extends Service
 			return new Response($this->DB_ERROR->status, 0);
 		
 		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`symptom_id`) AS `id` FROM `".$this->DB_TABLE."`;")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['id']);
+				
+			}
+		}
+		
+		return new Response($this->DB_ERROR->status, 0);
+		
+	}
+	
+	public function getLastIDByClinicID($clinicID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`symptom_id`) AS `id` FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`clinic_id`='".$clinicID."';")) {
 			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				
 				return new Response($this->SUCCESS->status, $res['id']);

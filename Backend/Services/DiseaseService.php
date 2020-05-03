@@ -25,8 +25,9 @@ class DiseaseService extends Service
 		if (!$this->database || $this->database->connect_errno)
 			return $this->DB_ERROR;
 		
-		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`title`, `air_spread`, `immunity`, `description`)".
+		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`clinic_id`, `title`, `air_spread`, `immunity`, `description`)".
 						   "VALUES (".
+						   "'".$dto->clinicID."',".
 						   "'".$dto->title."',".
 						   "'".$dto->airSpread."', ".
 						   "'".$dto->immunity."', ".
@@ -59,6 +60,7 @@ class DiseaseService extends Service
 				$dto = new DiseaseDTO;
 					
 				$dto->id = $res['disease_id'];
+				$dto->clinicID = $res['clinic_id'];
 				$dto->title = $res['title'];
 				$dto->airSpread = $res['air_spread'];
 				$dto->immunity = $res['immunity'];
@@ -87,6 +89,39 @@ class DiseaseService extends Service
 				$dto = new DiseaseDTO;
 					
 				$dto->id = $res['disease_id'];
+				$dto->clinicID = $res['clinic_id'];
+				$dto->title = $res['title'];
+				$dto->airSpread = $res['air_spread'];
+				$dto->immunity = $res['immunity'];
+				$dto->description = $res['description'];
+				
+				array_push($diseases, $dto);
+				
+			}
+			
+			if (!empty($diseases))
+				return new Response($this->SUCCESS->status, $diseases);
+		}
+		
+		return $this->NOT_FOUND;
+		
+	}
+	
+	public function getDiseasesByClinicID($clinicID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return $this->DB_ERROR;
+		
+		if ($result = $this->database->query("SELECT `".$this->DB_TABLE."`.* FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`clinic_id`='".$clinicID."';")) {
+			
+			$diseases = array();
+			
+			while ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				$dto = new DiseaseDTO;
+					
+				$dto->id = $res['disease_id'];
+				$dto->clinicID = $res['clinic_id'];
 				$dto->title = $res['title'];
 				$dto->airSpread = $res['air_spread'];
 				$dto->immunity = $res['immunity'];
@@ -110,6 +145,23 @@ class DiseaseService extends Service
 			return new Response($this->DB_ERROR->status, 0);
 		
 		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`disease_id`) AS `id` FROM `".$this->DB_TABLE."`;")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['id']);
+				
+			}
+		}
+		
+		return new Response($this->DB_ERROR->status, 0);
+		
+	}
+	
+	public function getLastIDByClinicID($clinicID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`disease_id`) AS `id` FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`clinic_id`='".$clinicID."';")) {
 			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 				
 				return new Response($this->SUCCESS->status, $res['id']);

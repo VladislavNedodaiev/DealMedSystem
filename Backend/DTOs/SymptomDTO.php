@@ -7,6 +7,7 @@ class SymptomDTO
 	
 	// Data
 	public $id;
+	public $clinicID;
 	public $title;
 	public $description;
 	
