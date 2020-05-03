@@ -1,7 +1,7 @@
 <?php
 
-namespace SeaSkincare\Backend\Services;
-use SeaSkincare\Backend\Communication\Response;
+namespace DealMedSystem\Backend\Services;
+use DealMedSystem\Backend\Communication\Response;
 
 class LogService
 {
