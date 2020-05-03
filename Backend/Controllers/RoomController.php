@@ -20,12 +20,12 @@ class RoomController extends Controller
 	public $NO_TITLE;
 	public $NO_X;
 	public $NO_Y;
-	public $WRONG_X;
-	public $WRONG_Y;
+	public $INCORRECT_X;
+	public $INCORRECT_Y;
 	public $NO_WIDTH;
 	public $NO_HEIGHT;
-	public $WRONG_WIDTH;
-	public $WRONG_HEIGHT;
+	public $INCORRECT_WIDTH;
+	public $INCORRECT_HEIGHT;
 	
 	public function __construct() {
 	
@@ -37,12 +37,12 @@ class RoomController extends Controller
 		$this->NO_TITLE = new Response("NO_TITLE", null);
 		$this->NO_X = new Response("NO_X", null);
 		$this->NO_Y = new Response("NO_Y", null);
-		$this->WRONG_X = new Response("WRONG_X", null);
-		$this->WRONG_Y = new Response("WRONG_Y", null);
+		$this->INCORRECT_X = new Response("INCORRECT_X", null);
+		$this->INCORRECT_Y = new Response("INCORRECT_Y", null);
 		$this->NO_WIDTH = new Response("NO_WIDTH", null);
 		$this->NO_HEIGHT = new Response("NO_HEIGHT", null);
-		$this->WRONG_WIDTH = new Response("WRONG_WIDTH", null);
-		$this->WRONG_HEIGHT = new Response("WRONG_HEIGHT", null);
+		$this->INCORRECT_WIDTH = new Response("INCORRECT_WIDTH", null);
+		$this->INCORRECT_HEIGHT = new Response("INCORRECT_HEIGHT", null);
 
 		$this->roomService = new RoomService(
 
@@ -95,25 +95,25 @@ class RoomController extends Controller
 			return $this->logResponse($this->NO_X);
 		
 		if (!is_numeric($x))
-			return $this->logResponse($this->WRONG_X);
+			return $this->logResponse($this->INCORRECT_X);
 		
 		if (!isset($y))
 			return $this->logResponse($this->NO_Y);
 		
 		if (!is_numeric($y))
-			return $this->logResponse($this->WRONG_Y);
+			return $this->logResponse($this->INCORRECT_Y);
 		
 		if (!isset($width))
 			return $this->logResponse($this->NO_WIDTH);
 		
 		if (!is_numeric($width) || (int)$width <= 0)
-			return $this->logResponse($this->WRONG_WIDTH);
+			return $this->logResponse($this->INCORRECT_WIDTH);
 		
 		if (!isset($height))
 			return $this->logResponse($this->NO_HEIGHT);
 		
 		if (!is_numeric($height) || (int)$height <= 0)
-			return $this->logResponse($this->WRONG_HEIGHT);
+			return $this->logResponse($this->INCORRECT_HEIGHT);
 		
 		$dto = new RoomDTO;
 		$dto->id = $roomID;

@@ -29,12 +29,10 @@ class HistoryService extends Service
 		if ($response->status ==$this->SUCCESS->status)
 			return $response;
 
-		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`client_id`, `disease_id`, `start_date`, `finish_date`)".
+		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`client_id`, `disease_id`)".
 						   "VALUES (".
 						   "'".$dto->clientID."',".
-						   "'".$dto->diseaseID."',".
-						   "'".$dto->startDate."',".
-						   "'".$dto->finishDate."');")) {
+						   "'".$dto->diseaseID."');")) {
 							   
 			$lastID = $this->getLastID();
 			if ($lastID->status ==$this->SUCCESS->status
@@ -179,6 +177,154 @@ class HistoryService extends Service
 		}
 		
 		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function getLastIDByClientID($clientID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`history_id`) AS `id` FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`client_id`='".$clientID."';")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['id']);
+				
+			}
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function getLastIDByDiseaseID($diseaseID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`history_id`) AS `id` FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`disease_id`='".$diseaseID."';")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['id']);
+				
+			}
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function getHistoriesActiveByClientID($someDate, $offset, $limit, $clientID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT `S1`.* FROM `".$this->DB_TABLE."` AS `S1` WHERE `S1`.`start_date`<='".$someDate."' AND `S1`.`finish_date`>='".$someDate."' AND `S1`.`client_id`='".$clientID."' LIMIT ".$limit." OFFSET ".$offset.";")) {
+			
+			$histories = array();
+			
+			while ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				$dto = new HistoryDTO;
+					
+				$dto->id = $res['history_id'];
+				$dto->clientID = $res['client_id'];
+				$dto->diseaseID = $res['disease_id'];
+				$dto->startDate = $res['start_date'];
+				$dto->finishDate = $res['finish_date'];
+				
+				array_push($histories, $dto);
+				
+			}
+			
+			if (!empty($histories))
+				return new Response($this->SUCCESS->status, $histories);
+			
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function getCountActiveDateByClientID($someDate, $clientID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT COUNT(`S1`.`history_id`) AS `count` FROM `".$this->DB_TABLE."` AS `S1` WHERE `S1`.`start_date`<='".$someDate."' AND `S1`.`finish_date`>='".$someDate."' AND `S1`.`client_id`='".$clientID."';")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['count']);
+				
+			}
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function getHistoriesActiveByDiseaseID($someDate, $offset, $limit, $diseaseID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT `S1`.* FROM `".$this->DB_TABLE."` AS `S1` WHERE `S1`.`start_date`<='".$someDate."' AND `S1`.`finish_date`>='".$someDate."' AND `S1`.`disease_id`='".$diseaseID."' LIMIT ".$limit." OFFSET ".$offset.";")) {
+			
+			$histories = array();
+			
+			while ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				$dto = new HistoryDTO;
+					
+				$dto->id = $res['history_id'];
+				$dto->clientID = $res['client_id'];
+				$dto->diseaseID = $res['disease_id'];
+				$dto->startDate = $res['start_date'];
+				$dto->finishDate = $res['finish_date'];
+				
+				array_push($histories, $dto);
+				
+			}
+			
+			if (!empty($histories))
+				return new Response($this->SUCCESS->status, $histories);
+			
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function getCountActiveDateByDiseaseID($someDate, $diseaseID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT COUNT(`S1`.`history_id`) AS `count` FROM `".$this->DB_TABLE."` AS `S1` WHERE `S1`.`start_date`<='".$someDate."' AND `S1`.`finish_date`>='".$someDate."' AND `S1`.`disease_id`='".$diseaseID."';")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['count']);
+				
+			}
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function updateHistory($dto) {
+		
+		
+		if (!$this->database || $this->database->connect_errno)
+			return $this->DB_ERROR;
+		
+		if (isset($dto->finishDate)) {
+			if ($this->database->query("UPDATE `".$this->DB_TABLE."` SET `start_date`='".$dto->startDate."', `finish_date`='".$dto->finishDate."' WHERE `history_id`='".$dto->id."';"))
+				return $this->SUCCESS;
+		} else if ($this->database->query("UPDATE `".$this->DB_TABLE."` SET `start_date`='".$dto->startDate."' WHERE `history_id`='".$dto->id."';"))
+			return $this->SUCCESS;
+			
+		return $this->NOT_FOUND;
 		
 	}
 	
