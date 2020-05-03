@@ -12,9 +12,9 @@ class HistoryService extends Service
 	
 	private $DB_TABLE;
 	
-	public function __construct($host, $client, $pswd, $db, $logService) {
+	public function __construct($host, $user, $pswd, $db, $logService) {
 		
-		parent::__construct($host, $client, $pswd, $db, $logService);
+		parent::__construct($host, $user, $pswd, $db, $logService);
 	
 		$this->DB_TABLE = "History";
 	
