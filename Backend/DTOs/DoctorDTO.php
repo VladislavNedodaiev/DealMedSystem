@@ -19,6 +19,7 @@ class DoctorDTO
 	
 	// Relations
 	public $specializations;
+	public $cabinets;
 	
 }
 
