@@ -25,13 +25,9 @@ class DiseaseService extends Service
 		if (!$this->database || $this->database->connect_errno)
 			return $this->DB_ERROR;
 		
-		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`clinic_id`, `title`, `air_spread`, `immunity`, `description`)".
-						   "VALUES (".
-						   "'".$dto->clinicID."',".
-						   "'".$dto->title."',".
-						   "'".$dto->airSpread."', ".
-						   "'".$dto->immunity."', ".
-						   "'".$dto->description."');")) {
+		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`clinic_id`)".
+						   "VALUES ('".$dto->clinicID."');")) {
+							   
 			$lastID = $this->getLastID();
 			if ($lastID->status ==$this->SUCCESS->status
 				&& $result = $this->database->query("SELECT `".$this->DB_TABLE."`.* FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`disease_id`=".$lastID->content.";")) {
