@@ -25,6 +25,12 @@ use DealMedSystem\Backend\Controllers\SymptomController;
 use DealMedSystem\Backend\DTOs\DiseaseDTO;
 use DealMedSystem\Backend\Controllers\DiseaseController;
 
+use DealMedSystem\Backend\DTOs\SpecializationDTO;
+use DealMedSystem\Backend\Controllers\SpecializationController;
+
+use DealMedSystem\Backend\DTOs\CabinetDTO;
+use DealMedSystem\Backend\Controllers\CabinetController;
+
 class ClinicController extends Controller
 {
 	
@@ -36,6 +42,8 @@ class ClinicController extends Controller
 	private $roomController;
 	private $symptomController;
 	private $diseaseController;
+	private $specializationController;
+	private $cabinetController;
 	
 	public $NO_EMAIL;
 	public $WRONG_EMAIL;
@@ -89,6 +97,8 @@ class ClinicController extends Controller
 		$this->roomController = new RoomController;
 		$this->symptomController = new SymptomController;
 		$this->diseaseController = new DiseaseController;
+		$this->specializationController = new SpecializationController;
+		$this->cabinetController = new CabinetController;
 	
 	}
 	
@@ -209,6 +219,21 @@ class ClinicController extends Controller
 		
 		return $this->logResponse($this->clinicService->updatePassword($clinicID, $oldPassword, $newPassword));
 	
+	}
+	
+	public function rearrangeDoctors($clinicID) {
+		
+		$this->specializationController = new SpecializationController;
+		$this->cabinetController = new CabinetController;
+		
+		$this->doctorController->getDoctorsByClinicID($clinicID);
+		$this->roomController->getRoomsByClinicID($clinicID);
+		$this->diseaseController->getDiseasesByClinicID($clinicID);
+		
+		$this->specializationController->getDoctorsByDoctorID($clinicID);
+		
+		// TODO
+		
 	}
 	
 }

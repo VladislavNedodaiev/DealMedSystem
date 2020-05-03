@@ -81,6 +81,40 @@ class RoomController extends Controller
 		
 	}
 	
+	public function getRoomsByClinicID($clinicID) {
+		
+		$this->logService->logMessage("RoomController GetRoomByClinicID");
+		
+		if (!isset($clinicID))
+			return $this->logResponse($this->NO_CLINICID);
+		
+		return $this->logResponse($this->roomService->getRoomsByClinicID($clinicID));
+		
+	}
+	
+	public function getLastRoom() {
+		
+		$this->logService->logMessage("RoomController GetLastRoom");
+		
+		$roomID = $this->roomService->getLastID();
+		if ($roomID->status != $this->roomService->SUCCESS->status)
+			return $this->logResponse($roomID);
+		
+		return $this->logResponse($this->roomService->getRoom($roomID->content));
+		
+	}
+	
+	public function getLastRoomByClinicID($clinicID) {
+		
+		$this->logService->logMessage("RoomController GetLastRoomByClinicID");
+		
+		if (!isset($clinicID))
+			return $this->logResponse($this->NO_CLINICID);
+		
+		return $this->logResponse($this->roomService->getLastRoomByClinicID($clinicID));
+		
+	}
+	
 	public function editRoom($roomID, $title, $x, $y, $width, $height) {
 	
 		$this->logService->logMessage("RoomController EditRoom");

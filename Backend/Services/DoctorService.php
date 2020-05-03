@@ -132,6 +132,23 @@ class DoctorService extends Service
 		
 	}
 	
+	public function getLastIDByClinicID($clinicID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`doctor_id`) AS `id` FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`clinic_id`='".$clinicID."';")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['id']);
+				
+			}
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
 	public function updateDoctor($dto) {
 		
 		

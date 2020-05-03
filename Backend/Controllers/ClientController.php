@@ -79,6 +79,40 @@ class ClientController extends Controller
 		
 	}
 	
+	public function getClientsByClinicID($clinicID) {
+		
+		$this->logService->logMessage("ClientController GetClientByClinicID");
+		
+		if (!isset($clinicID))
+			return $this->logResponse($this->NO_CLINICID);
+		
+		return $this->logResponse($this->clientService->getClientsByClinicID($clinicID));
+		
+	}
+	
+	public function getLastClient() {
+		
+		$this->logService->logMessage("ClientController GetLastClient");
+		
+		$clientID = $this->clientService->getLastID();
+		if ($clientID->status != $this->clientService->SUCCESS->status)
+			return $this->logResponse($clientID);
+		
+		return $this->logResponse($this->clientService->getClient($clientID->content));
+		
+	}
+	
+	public function getLastClientByClinicID($clinicID) {
+		
+		$this->logService->logMessage("ClientController GetLastClientByClinicID");
+		
+		if (!isset($clinicID))
+			return $this->logResponse($this->NO_CLINICID);
+		
+		return $this->logResponse($this->clientService->getLastClientByClinicID($clinicID));
+		
+	}
+	
 	public function editClient($clientID, $gender, $firstName, $secondName, $thirdName, $birthday, $photo, $phone) {
 	
 		$this->logService->logMessage("ClientController EditClient");

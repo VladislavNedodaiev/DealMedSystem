@@ -71,6 +71,40 @@ class DiseaseController extends Controller
 		
 	}
 	
+	public function getDiseasesByClinicID($clinicID) {
+		
+		$this->logService->logMessage("DiseaseController GetDiseaseByClinicID");
+		
+		if (!isset($clinicID))
+			return $this->logResponse($this->NO_CLINICID);
+		
+		return $this->logResponse($this->diseaseService->getDiseasesByClinicID($clinicID));
+		
+	}
+	
+	public function getLastDisease() {
+		
+		$this->logService->logMessage("DiseaseController GetLastDisease");
+		
+		$diseaseID = $this->diseaseService->getLastID();
+		if ($diseaseID->status != $this->diseaseService->SUCCESS->status)
+			return $this->logResponse($diseaseID);
+		
+		return $this->logResponse($this->diseaseService->getDisease($diseaseID->content));
+		
+	}
+	
+	public function getLastDiseaseByClinicID($clinicID) {
+		
+		$this->logService->logMessage("DiseaseController GetLastDiseaseByClinicID");
+		
+		if (!isset($clinicID))
+			return $this->logResponse($this->NO_CLINICID);
+		
+		return $this->logResponse($this->diseaseService->getLastDiseaseByClinicID($clinicID));
+		
+	}
+	
 	public function editDisease($diseaseID, $title, $airSpread, $immunity, $description) {
 	
 		$this->logService->logMessage("DiseaseController EditDisease");
