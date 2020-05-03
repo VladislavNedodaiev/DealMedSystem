@@ -1,13 +1,13 @@
 <?php
 
-namespace SeaSkincare\Backend\Controllers;
+namespace DealMedSystem\Backend\Controllers;
 
-use SeaSkincare\Backend\Controllers\Controller;
-use SeaSkincare\Backend\Services\LogService;
-use SeaSkincare\Backend\Data\DataRepository;
-use SeaSkincare\Backend\DTOs\HistoryDTO;
-use SeaSkincare\Backend\Services\HistoryService;
-use SeaSkincare\Backend\Communication\Response;
+use DealMedSystem\Backend\Controllers\Controller;
+use DealMedSystem\Backend\Services\LogService;
+use DealMedSystem\Backend\Data\DataRepository;
+use DealMedSystem\Backend\DTOs\HistoryDTO;
+use DealMedSystem\Backend\Services\HistoryService;
+use DealMedSystem\Backend\Communication\Response;
 
 class HistoryController extends Controller
 {
@@ -147,7 +147,7 @@ class HistoryController extends Controller
 		if (!isset($diseaseID))
 			return $this->logResponse($this->NO_DISEASEID);
 		
-		return $this->logResponse($this->historyService->getLastHistoryByDiseaseID($clientID));
+		return $this->logResponse($this->historyService->getLastHistoryByDiseaseID($diseaseID));
 		
 	}
 	
