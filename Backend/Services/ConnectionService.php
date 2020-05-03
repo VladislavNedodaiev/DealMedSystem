@@ -201,6 +201,57 @@ class ConnectionService extends Service
 		
 	}
 	
+	public function getLastIDByRoomToID($roomTo) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`feature_id`) AS `id` FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`room_to_id`='".$roomTo."';")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['id']);
+				
+			}
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function getLastIDByRoomFromID($roomFromID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`feature_id`) AS `id` FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`room_from_id`='".$roomFromID."';")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['id']);
+				
+			}
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
+	public function getLastIDByRoomID($roomID) {
+		
+		if (!$this->database || $this->database->connect_errno)
+			return new Response($this->DB_ERROR->status, 0);
+		
+		if ($result = $this->database->query("SELECT MAX(`".$this->DB_TABLE."`.`feature_id`) AS `id` FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`room_from_id`='".$roomID."' OR `".$this->DB_TABLE."`.`room_to_id`='".$roomID."';")) {
+			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+				
+				return new Response($this->SUCCESS->status, $res['id']);
+				
+			}
+		}
+		
+		return new Response($this->NOT_FOUND->status, 0);
+		
+	}
+	
 	public function deleteConnection($connectionID) {
 		
 		if (!$this->database || $this->database->connect_errno)
