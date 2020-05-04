@@ -8,6 +8,7 @@ class RoomDTO
 	// Data
 	public $id;
 	public $clinicID;
+	public $isCabinet;
 	public $title;
 	public $x;
 	public $y;

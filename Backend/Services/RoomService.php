@@ -60,6 +60,8 @@ class RoomService extends Service
 				$dto = new RoomDTO;
 					
 				$dto->id = $res['room_id'];
+				$dto->clinicID = $res['clinic_id'];
+				$dto->isCabinet = $res['is_cabinet'];
 				$dto->title = $res['title'];
 				$dto->x = $res['x'];
 				$dto->y = $res['y'];
@@ -89,6 +91,8 @@ class RoomService extends Service
 				$dto = new RoomDTO;
 					
 				$dto->id = $res['room_id'];
+				$dto->clinicID = $res['clinic_id'];
+				$dto->isCabinet = $res['is_cabinet'];
 				$dto->title = $res['title'];
 				$dto->x = $res['x'];
 				$dto->y = $res['y'];
@@ -147,7 +151,7 @@ class RoomService extends Service
 		if (!$this->database || $this->database->connect_errno)
 			return $this->DB_ERROR;
 		
-		if ($this->database->query("UPDATE `".$this->DB_TABLE."` SET `title`='".$dto->title."', `x`='".$dto->x."', `y`='".$dto->y."', `width`='".$dto->width."', `height`='".$dto->height."' WHERE `room_id`='".$dto->id."';"))
+		if ($this->database->query("UPDATE `".$this->DB_TABLE."` SET `is_cabinet`='".$dto->isCabinet."', `title`='".$dto->title."', `x`='".$dto->x."', `y`='".$dto->y."', `width`='".$dto->width."', `height`='".$dto->height."' WHERE `room_id`='".$dto->id."';"))
 			return $this->SUCCESS;
 			
 		return $this->NOT_FOUND;

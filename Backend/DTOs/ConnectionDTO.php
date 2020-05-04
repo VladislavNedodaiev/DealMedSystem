@@ -9,6 +9,7 @@ class ConnectionDTO
 	public $id;
 	public $roomFromID;
 	public $roomToID;
+	public $distance;
 	
 }
 

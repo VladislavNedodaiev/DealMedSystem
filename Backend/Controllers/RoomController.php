@@ -17,6 +17,7 @@ class RoomController extends Controller
 	public $SUCCESS;
 	public $NO_ROOMID;
 	public $NO_CLINICID;
+	public $NO_ISCABINET;
 	public $NO_TITLE;
 	public $NO_X;
 	public $NO_Y;
@@ -34,6 +35,7 @@ class RoomController extends Controller
 		$this->SUCCESS = new Response("SUCCESS", null);
 		$this->NO_ROOMID = new Response("NO_ROOMID", null);
 		$this->NO_CLINICID = new Response("NO_CLINICID", null);
+		$this->NO_ISCABINET = new Response("NO_ISCABINET", null);
 		$this->NO_TITLE = new Response("NO_TITLE", null);
 		$this->NO_X = new Response("NO_X", null);
 		$this->NO_Y = new Response("NO_Y", null);
@@ -115,7 +117,7 @@ class RoomController extends Controller
 		
 	}
 	
-	public function editRoom($roomID, $title, $x, $y, $width, $height) {
+	public function editRoom($roomID, $isCabinet, $title, $x, $y, $width, $height) {
 	
 		$this->logService->logMessage("RoomController EditRoom");
 	
@@ -124,6 +126,9 @@ class RoomController extends Controller
 		
 		if (!isset($title))
 			return $this->logResponse($this->NO_TITLE);
+		
+		if (!isset($isCabinet))
+			return $this->logResponse($this->NO_ISCABINET);
 		
 		if (!isset($x))
 			return $this->logResponse($this->NO_X);
