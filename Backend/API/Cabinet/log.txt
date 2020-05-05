@@ -1,0 +1,2 @@
+10.01.2020 15:37:31 AirController GetAir
+10.01.2020 15:37:31 {"status":"SUCCESS","content":{"id":"23","temperature":"20","pollution":"200"}}
