@@ -1,18 +1,18 @@
 <?php
-namespace SeaSkincare\Backend\API\Air;
+namespace DealMedSystem\Backend\API\Cabinet;
 
 include_once '../../Includes/CommonInclude.php';
-include_once '../../Includes/AirInclude.php';
+include_once '../../Includes/CabinetInclude.php';
 
-use SeaSkincare\Backend\Controllers\AirController;
-use SeaSkincare\Backend\Communication\Response;
+use DealMedSystem\Backend\Controllers\CabinetController;
+use DealMedSystem\Backend\Communication\Response;
 
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-$airController = new AirController;
+$cabinetController = new CabinetController;
 
-echo json_encode($airController->createAir($_POST['connectionID'], $_POST['temperature'], $_POST['pollution']));
+echo json_encode($cabinetController->createCabinet($_POST['doctorID'], $_POST['roomID']));
 exit;
 
 ?>

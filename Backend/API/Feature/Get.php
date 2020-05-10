@@ -1,18 +1,18 @@
 <?php
-namespace SeaSkincare\Backend\API\SkinProblem;
+namespace DealMedSystem\Backend\API\Feature;
 
 include_once '../../Includes/CommonInclude.php';
-include_once '../../Includes/SkinProblemInclude.php';
+include_once '../../Includes/FeatureInclude.php';
 
-use SeaSkincare\Backend\Controllers\SkinProblemController;
-use SeaSkincare\Backend\Communication\Response;
+use DealMedSystem\Backend\Controllers\FeatureController;
+use DealMedSystem\Backend\Communication\Response;
 
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-$skinProblemController = new SkinProblemController;
+$featureController = new FeatureController;
 
-echo json_encode($skinProblemController->getSkinProblem($_GET['skinProblemID']));
+echo json_encode($featureController->getFeature($_GET['featureID']));
 exit;
 
 ?>

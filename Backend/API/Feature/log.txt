@@ -1,2 +1,0 @@
-10.01.2020 03:58:15 SkinProblemController GetSkinProblems
-10.01.2020 03:58:15 {"status":"SUCCESS","content":[{"id":"1","title":"Atopic Dermatit","normalPH":"7","normalSalt":"3","normalAirPollution":"36","normalSunPower":"800","userProblems":null},{"id":"2","title":"Sun Allergy","normalPH":"7","normalSalt":"80","normalAirPollution":"80","normalSunPower":"300","userProblems":null},{"id":"3","title":"Water Allergy","normalPH":"6","normalSalt":"0","normalAirPollution":"80","normalSunPower":"1000","userProblems":null}]}

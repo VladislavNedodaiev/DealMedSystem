@@ -1,31 +1,18 @@
 <?php
-namespace SeaSkincare\Backend\API\UserProblem;
+namespace DealMedSystem\Backend\API\Connection;
 
 include_once '../../Includes/CommonInclude.php';
-include_once '../../Includes/UserProblemInclude.php';
-include_once '../../Includes/SkinProblemInclude.php';
-include_once '../../Includes/UserInclude.php';
+include_once '../../Includes/ConnectionInclude.php';
 
-use SeaSkincare\Backend\Controllers\UserProblemController;
-use SeaSkincare\Backend\Controllers\UserController;
-use SeaSkincare\Backend\Communication\Response;
+use DealMedSystem\Backend\Controllers\ConnectionController;
+use DealMedSystem\Backend\Communication\Response;
 
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-$userProblemController = new UserProblemController;
-$userController = new UserController;
+$connectionController = new ConnectionController;
 
-if ($response = $userController->login($_POST['email'], $_POST['password'])) {
-	if ($response->status != $userController->SUCCESS->status) {
-	
-		echo json_encode($response);
-		exit;
-	
-	}
-}
-
-echo json_encode($userProblemController->createUserProblem($_POST['userID'], $_POST['skinProblemID']));
+echo json_encode($connectionController->createConnection($_POST['roomFromID'], $_POST['roomToID']));
 exit;
 
 ?>

@@ -81,37 +81,37 @@ class DoctorController extends Controller
 		
 	}
 	
-	public function getSymptomsByClinicID($clinicID) {
+	public function getDoctorsByClinicID($clinicID) {
 		
-		$this->logService->logMessage("SymptomController GetSymptomByClinicID");
-		
-		if (!isset($clinicID))
-			return $this->logResponse($this->NO_CLINICID);
-		
-		return $this->logResponse($this->symptomService->getSymptomsByClinicID($clinicID));
-		
-	}
-	
-	public function getLastSymptom() {
-		
-		$this->logService->logMessage("SymptomController GetLastSymptom");
-		
-		$symptomID = $this->symptomService->getLastID();
-		if ($symptomID->status != $this->symptomService->SUCCESS->status)
-			return $this->logResponse($symptomID);
-		
-		return $this->logResponse($this->symptomService->getSymptom($symptomID->content));
-		
-	}
-	
-	public function getLastSymptomByClinicID($clinicID) {
-		
-		$this->logService->logMessage("SymptomController GetLastSymptomByClinicID");
+		$this->logService->logMessage("DoctorController GetDoctorByClinicID");
 		
 		if (!isset($clinicID))
 			return $this->logResponse($this->NO_CLINICID);
 		
-		return $this->logResponse($this->symptomService->getLastSymptomByClinicID($clinicID));
+		return $this->logResponse($this->doctorService->getDoctorsByClinicID($clinicID));
+		
+	}
+	
+	public function getLastDoctor() {
+		
+		$this->logService->logMessage("DoctorController GetLastDoctor");
+		
+		$doctorID = $this->doctorService->getLastID();
+		if ($doctorID->status != $this->doctorService->SUCCESS->status)
+			return $this->logResponse($doctorID);
+		
+		return $this->logResponse($this->doctorService->getDoctor($doctorID->content));
+		
+	}
+	
+	public function getLastDoctorByClinicID($clinicID) {
+		
+		$this->logService->logMessage("DoctorController GetLastDoctorByClinicID");
+		
+		if (!isset($clinicID))
+			return $this->logResponse($this->NO_CLINICID);
+		
+		return $this->logResponse($this->doctorService->getLastDoctorByClinicID($clinicID));
 		
 	}
 	

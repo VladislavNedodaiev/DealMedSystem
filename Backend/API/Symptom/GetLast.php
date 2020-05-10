@@ -1,18 +1,18 @@
 <?php
-namespace SeaSkincare\Backend\API\SkinProblem;
+namespace DealMedSystem\Backend\API\Symptom;
 
 include_once '../../Includes/CommonInclude.php';
-include_once '../../Includes/SkinProblemInclude.php';
+include_once '../../Includes/SymptomInclude.php';
 
-use SeaSkincare\Backend\Controllers\SkinProblemController;
-use SeaSkincare\Backend\Communication\Response;
+use DealMedSystem\Backend\Controllers\SymptomController;
+use DealMedSystem\Backend\Communication\Response;
 
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-$skinProblemController = new SkinProblemController;
+$symptomController = new SymptomController;
 
-echo json_encode($skinProblemController->getLastSkinProblem());
+echo json_encode($symptomController->getLastSymptom());
 exit;
 
 ?>

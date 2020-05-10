@@ -1,18 +1,18 @@
 <?php
-namespace SeaSkincare\Backend\API\SkinProblem;
+namespace DealMedSystem\Backend\API\Specialization;
 
 include_once '../../Includes/CommonInclude.php';
-include_once '../../Includes/SkinProblemInclude.php';
+include_once '../../Includes/SpecializationInclude.php';
 
-use SeaSkincare\Backend\Controllers\SkinProblemController;
-use SeaSkincare\Backend\Communication\Response;
+use DealMedSystem\Backend\Controllers\SpecializationController;
+use DealMedSystem\Backend\Communication\Response;
 
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-$skinProblemController = new SkinProblemController;
+$specializationController = new SpecializationController;
 
-echo json_encode($skinProblemController->createSkinProblem($_POST['title'], $_POST['normalPH'], $_POST['normalSalt'], $_POST['normalAirPollution'], $_POST['normalSunPower']));
+echo json_encode($specializationController->createSpecialization($_POST['doctorID'], $_POST['diseaseID']));
 exit;
 
 ?>

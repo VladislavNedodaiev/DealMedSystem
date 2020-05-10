@@ -1,18 +1,18 @@
 <?php
-namespace SeaSkincare\Backend\API\SkinProblem;
+namespace DealMedSystem\Backend\API\Doctor;
 
 include_once '../../Includes/CommonInclude.php';
-include_once '../../Includes/SkinProblemInclude.php';
+include_once '../../Includes/DoctorInclude.php';
 
-use SeaSkincare\Backend\Controllers\SkinProblemController;
-use SeaSkincare\Backend\Communication\Response;
+use DealMedSystem\Backend\Controllers\DoctorController;
+use DealMedSystem\Backend\Communication\Response;
 
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-$skinProblemController = new SkinProblemController;
+$doctorController = new DoctorController;
 
-echo json_encode($skinProblemController->editSkinProblem($_POST['skinProblemID'], $_POST['title'], $_POST['normalPH'], $_POST['normalSalt'], $_POST['normalAirPollution'], $_POST['normalSunPower']));
+echo json_encode($doctorController->editDoctor($_POST['doctorID'], $_POST['gender'], $_POST['firstName'], $_POST['secondName'], $_POST['thirdName'], $_POST['birthday'], $_POST['photo'], $_POST['description'], $_POST['phone']));
 exit;
 
 ?>

@@ -236,9 +236,9 @@ class ClinicController extends Controller
 	
 	}
 	
-	public function getDistance($x1, y1, x2, y2) {
+	public function getDistance($x1, $y1, $x2, $y2) {
 		
-		return sqrt(pow(x2-x1, 2) + pow(y2-y1, 2));
+		return sqrt(pow($x2-$x1, 2) + pow($y2-$y1, 2));
 		
 	}
 	
@@ -379,6 +379,8 @@ class ClinicController extends Controller
 			$doc_pos++;
 			
 		}
+		
+		return $this->logResponse($this->SUCCESS); 
 		
 	}
 	
