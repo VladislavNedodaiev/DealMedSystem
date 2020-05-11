@@ -71,7 +71,7 @@ class ClinicService extends Service
 	}
 	
 	// registering clinic
-	public function register($email, $password, $title) {
+	public function register($email, $password) {
 		
 		if (!$this->database || $this->database->connect_errno)
 			return $this->DB_ERROR;
@@ -88,10 +88,9 @@ class ClinicService extends Service
 		$this->database->query("START TRANSACTION;");
 		$this->database->query("SAVEPOINT reg_".$verification.";");
 		
-		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`password`, `title`, `email`, `verification`)".
+		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`password`, `email`, `verification`)".
 						   "VALUES (".
 						   "'".password_hash($password, PASSWORD_BCRYPT)."',".
-						   "'".$title."', ".
 						   "'".$email."', ".
 						   "'".$verification."');")) {
 			

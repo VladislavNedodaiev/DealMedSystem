@@ -127,7 +127,7 @@ class ClinicController extends Controller
 	}
 	
 	// registering user
-	public function register($email, $password, $repeat_password, $title) {
+	public function register($email, $password, $repeat_password) {
 		
 		$this->logService->logMessage("ClinicController Register");
 		
@@ -146,10 +146,7 @@ class ClinicController extends Controller
 		if ($password != $repeat_password)
 			return $this->logResponse($this->DIFFERENT_PASSWORDS);
 		
-		if (!isset($title))
-			return $this->logResponse($this->NO_TITLE);
-		
-		return $this->logResponse($this->clinicService->register($email, $password, $title));
+		return $this->logResponse($this->clinicService->register($email, $password));
 		
 	}
 	
