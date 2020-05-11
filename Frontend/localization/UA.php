@@ -7,6 +7,7 @@ $header = array (
 	'login_button_text' => 'Вхід',
 	'register_button_text' => 'Реєстрація',
 	'clinic_button_text' => 'Клініка',
+	'rooms_button_text' => 'Планування',
 	'diseases_button_text' => 'Захворювання',
 	'doctors_button_text' => 'Медичні працівники',
 	'clients_button_text' => 'Клієнти',
@@ -77,6 +78,103 @@ $registration = array (
 
 );
 
+$edit_profile = array (
+
+	'edit_profile_title' => 'Редагування',
+	'save_button_text' => 'Зберегти зміни',
+	'cancel_button_text' => 'Скасувати зміни',
+	'title_placeholder' => 'Введіть назву клініки',
+	'address_placeholder' => 'Введіть адресу',
+	'first_name_placeholder' => "Введіть ім'я",
+	'second_name_placeholder' => 'Введіть прізвище',
+	'third_name_placeholder' => 'Введіть по батькові',
+	'phone_placeholder' => 'Введіть номер телефону',
+	'description_placeholder' => 'Біографія (не більше 3000 символів)'
+
+);
+
+$clinic_profile = array (
+
+	'show_rooms' => 'Планування',
+	'show_doctors' => 'Мед. персонал',
+	'show_clients' => 'Клієнти',
+	'show_diseases' => 'Захворювання',
+	'register_date' => 'Реєстрація',
+	'email' => 'Електронна пошта',
+	'address' => 'Адреса',
+	'title' => 'Клініка',
+	'phone' => 'Номер телефону',
+	'no_information' => 'Інформація відсутня'
+
+);
+
+$save_clinic_profile = array (
+	
+	'SUCCESS' => 'Зміни були застосовані',
+	'DB_ERROR' => 'Сталася помилка при зверненні до бази даних',
+	'UNKNOWN' => 'Сталася невідома помилка',
+	'PHOTO_ERROR' => 'Сталася помилка під час збереження зображення'
+	
+);
+
+$doctor_profile = array (
+
+	'title' => 'Медичний працівник',
+	'show_specializations' => 'Спеціалізації',
+	'birthday' => 'Дата народження',
+	'cabinet' => 'Кабінет',
+	'first_name' => "Ім'я",
+	'second_name' => "Прізвище",
+	'third_name' => "По батькові",
+	'gender' => 'Гендер',
+	'female' => 'Жінка',
+	'male' => 'Чоловік',
+	'phone' => 'Номер телефону',
+	'description' => 'Біографія',
+	'no_information' => 'Інформація відсутня'
+
+);
+
+$save_doctor_profile = array (
+	
+	'SUCCESS' => 'Зміни були застосовані',
+	'DB_ERROR' => 'Сталася помилка при зверненні до бази даних',
+	'UNKNOWN' => 'Сталася невідома помилка',
+	'PHOTO_ERROR' => 'Сталася помилка під час збереження зображення'
+	
+);
+
+$client_profile = array (
+
+	'title' => 'Клієнт',
+	'show_histories' => 'Історія хвороб',
+	'birthday' => 'Дата народження',
+	'first_name' => "Ім'я",
+	'second_name' => "Прізвище",
+	'third_name' => "По батькові",
+	'gender' => 'Гендер',
+	'female' => 'Жінка',
+	'male' => 'Чоловік',
+	'phone' => 'Номер телефону',
+	'no_information' => 'Інформація відсутня'
+
+);
+
+$save_client_profile = array (
+	
+	'SUCCESS' => 'Зміни були застосовані',
+	'DB_ERROR' => 'Сталася помилка при зверненні до бази даних',
+	'UNKNOWN' => 'Сталася невідома помилка',
+	'PHOTO_ERROR' => 'Сталася помилка під час збереження зображення'
+	
+);
+
+//
+//
+// OLD
+//
+//
+
 $user_profile = array (
 
 	'profile' => 'Профіль',
@@ -112,28 +210,6 @@ $save_user_profile = array (
 	'DB_ERROR' => 'Сталася помилка при зверненні до бази даних',
 	'UNKNOWN' => 'Сталася невідома помилка'
 
-);
-
-$business_profile = array (
-
-	'show_devices' => 'Переглянути пристрої',
-	'show_vacations' => 'Мої відпочинки тут',
-	'register_date' => 'Реєстрація',
-	'email' => 'Електронна пошта',
-	'nickname' => 'Назва бізнесу',
-	'phone' => 'Номер телефону',
-	'no_information' => 'Інформація відсутня',
-	'description' => 'Опис'
-
-);
-
-$save_business_profile = array (
-	
-	'SUCCESS' => 'Зміни були застосовані',
-	'DB_ERROR' => 'Сталася помилка при зверненні до бази даних',
-	'UNKNOWN' => 'Сталася невідома помилка',
-	'PHOTO_ERROR' => 'Сталася помилка під час збереження зображення'
-	
 );
 
 $my_skin_problems = array (

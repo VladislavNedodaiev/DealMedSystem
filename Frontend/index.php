@@ -6,6 +6,6 @@ session_start();
 
 <?php include "templates/alert.php"; ?>
 
-<?php include "templates/index/login.php"; ?>
+<?php /* TODO */ ?>
 
 <?php require "templates/footer.php"; ?>

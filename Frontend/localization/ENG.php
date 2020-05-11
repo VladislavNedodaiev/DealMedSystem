@@ -7,6 +7,7 @@ $header = array (
 	'login_button_text' => 'Login',
 	'register_button_text' => 'Register',
 	'clinic_button_text' => 'Clinic',
+	'rooms_button_text' => 'Planner',
 	'diseases_button_text' => 'Diseases',
 	'doctors_button_text' => 'Doctors',
 	'clients_button_text' => 'Clients',
@@ -77,6 +78,103 @@ $registration = array (
 
 );
 
+$edit_profile = array (
+
+	'edit_profile_title' => 'Edit',
+	'save_button_text' => 'Save',
+	'cancel_button_text' => 'Cancel',
+	'title_placeholder' => 'Enter title',
+	'address_placeholder' => 'Enter address',
+	'first_name_placeholder' => 'Enter first name',
+	'second_name_placeholder' => 'Enter second name',
+	'third_name_placeholder' => 'Enter third name',
+	'phone_placeholder' => 'Enter phone number',
+	'description_placeholder' => 'Biography (up to 3000 characters)'
+
+);
+
+$clinic_profile = array (
+
+	'show_rooms' => 'Planner',
+	'show_doctors' => 'Doctors',
+	'show_clients' => 'Clients',
+	'show_diseases' => 'Diseases',
+	'register_date' => 'Registered',
+	'email' => 'Email',
+	'address' => 'Address',
+	'title' => 'Title',
+	'phone' => 'Phone',
+	'no_information' => 'No information'
+
+);
+
+$save_clinic_profile = array (
+	
+	'SUCCESS' => 'Changes saved successfully',
+	'DB_ERROR' => 'Database error occured',
+	'UNKNOWN' => 'Unknown error occured',
+	'PHOTO_ERROR' => 'Error occured while saving photo'
+	
+);
+
+$doctor_profile = array (
+
+	'title' => 'Doctor',
+	'show_specializations' => 'Specializations',
+	'birthday' => 'Birthday',
+	'cabinet' => 'Cabinet',
+	'first_name' => "First name",
+	'second_name' => "Second name",
+	'third_name' => "Third name",
+	'gender' => 'Gender',
+	'female' => 'Female',
+	'male' => 'Male',
+	'phone' => 'Phone',
+	'description' => 'Biography',
+	'no_information' => 'No information'
+
+);
+
+$save_doctor_profile = array (
+	
+	'SUCCESS' => 'Changes saved successfully',
+	'DB_ERROR' => 'Database error occured',
+	'UNKNOWN' => 'Unknown error occured',
+	'PHOTO_ERROR' => 'Error occured while saving photo'
+	
+);
+
+$client_profile = array (
+
+	'title' => 'Client',
+	'show_histories' => 'Diseases history',
+	'birthday' => 'Birthday',
+	'first_name' => "First name",
+	'second_name' => "Second name",
+	'third_name' => "Third name",
+	'gender' => 'Gender',
+	'female' => 'Female',
+	'male' => 'Male',
+	'phone' => 'Phone',
+	'no_information' => 'No information'
+
+);
+
+$save_client_profile = array (
+	
+	'SUCCESS' => 'Changes saved successfully',
+	'DB_ERROR' => 'Database error occured',
+	'UNKNOWN' => 'Unknown error occured',
+	'PHOTO_ERROR' => 'Error occured while saving photo'
+	
+);
+
+//
+//
+// OLD
+//
+//
+
 $user_profile = array (
 
 	'profile' => 'Profile',
@@ -112,28 +210,6 @@ $save_user_profile = array (
 	'DB_ERROR' => 'Database error occured',
 	'UNKNOWN' => 'Unknown error occured'
 
-);
-
-$business_profile = array (
-
-	'show_devices' => 'Show devices',
-	'show_vacations' => 'My vacations here',
-	'register_date' => 'Registered',
-	'email' => 'Email',
-	'nickname' => 'Business title',
-	'phone' => 'Phone',
-	'no_information' => 'No information',
-	'description' => 'Description'
-
-);
-
-$save_business_profile = array (
-	
-	'SUCCESS' => 'Changes saved successfully',
-	'DB_ERROR' => 'Database error occured',
-	'UNKNOWN' => 'Unknown error occured',
-	'PHOTO_ERROR' => 'Error occured while saving photo'
-	
 );
 
 $my_skin_problems = array (

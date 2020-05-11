@@ -48,6 +48,7 @@ include_once "localization/localization.php";
 							<a class="nav-item nav-link" href="register.php"><?php echo getLocalString('header', 'register_button_text'); ?></a>
 						<?php } else { ?>
 							<a class="nav-item nav-link" href="clinic.php"><?php echo getLocalString('header', 'clinic_button_text'); ?></a>
+							<a class="nav-item nav-link" href="rooms.php"><?php echo getLocalString('header', 'rooms_button_text'); ?></a>
 							<a class="nav-item nav-link" href="diseases.php"><?php echo getLocalString('header', 'diseases_button_text'); ?></a>
 							<a class="nav-item nav-link" href="doctors.php"><?php echo getLocalString('header', 'doctors_button_text'); ?></a>
 							<a class="nav-item nav-link" href="clients.php"><?php echo getLocalString('header', 'clients_button_text'); ?></a>
