@@ -18,12 +18,6 @@ if (isset($_SESSION['profile'])) {
 	<h4 class="card-title mt-3 text-center"><?php echo getLocalString('register', 'title'); ?></h4>
 	
 	<form action="scripts/registration.php" method="POST">
-		<div class="form-group input-group">
-			<div class="input-group-prepend">
-				<span class="input-group-text"> <i class="fa fa-user"></i> </span>
-			</div>
-			<input name="nickname" class="form-control" placeholder="<?php echo getLocalString('register', 'nickname_placeholder'); ?>" type="text" required>
-		</div>
 		
 		<div class="form-group input-group">
 			<div class="input-group-prepend">
