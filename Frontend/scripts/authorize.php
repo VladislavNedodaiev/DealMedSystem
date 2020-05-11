@@ -7,7 +7,8 @@ include_once '../localization/localization.php';
 // Initialize session and set URL.
 $channel = curl_init();
 
-$url = require('backend_host.php').'/Backend/API';
+$url = require('backend_host.php');
+$url .= '/Backend/API';
 $url .= '/Clinic/Login.php';
 
 $url .= '?email='.urlencode($_GET['email']);
