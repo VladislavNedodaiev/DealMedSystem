@@ -67,11 +67,12 @@ if ($response->status == "SUCCESS") {
 	
 	$_SESSION['msg']['type'] = 'alert-danger';
 	$_SESSION['msg']['text'] = getLocalString('registration', 'UNKNOWN');
-	var_dump($response);
 	
 } 
 
-header("Location: ../register.php");
-exit;
+var_dump($response);
+
+//header("Location: ../register.php");
+//exit;
 
 ?>
