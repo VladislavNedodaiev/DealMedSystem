@@ -175,43 +175,6 @@ $save_client_profile = array (
 //
 //
 
-$user_profile = array (
-
-	'profile' => 'Профіль',
-	'my_profile' => 'Мій профіль',
-	'register_date' => 'Реєстрація',
-	'email' => 'Електронна пошта',
-	'nickname' => 'Нікнейм',
-	'name' => "Ім'я",
-	'gender' => 'Гендер',
-	'female' => 'Жінка',
-	'male' => 'Чоловік',
-	'phone' => 'Номер телефону',
-	'no_information' => 'Інформація відсутня'
-
-);
-
-$edit_profile = array (
-
-	'edit_profile_title' => 'Редагувати профіль',
-	'save_button_text' => 'Зберегти зміни',
-	'cancel_button_text' => 'Скасувати зміни',
-	'user_nickname_placeholder' => 'Введіть нікнейм',
-	'business_nickname_placeholder' => 'Введіть назву бізнеса',
-	'name_placeholder' => "Введіть ваше ім'я",
-	'phone_placeholder' => 'Введіть номер телефону',
-	'user_private' => 'Це можете бачити тільки ви та акаунт місця, де ви зупинилися'
-
-);
-
-$save_user_profile = array (
-
-	'SUCCESS' => 'Зміни були застосовані',
-	'DB_ERROR' => 'Сталася помилка при зверненні до бази даних',
-	'UNKNOWN' => 'Сталася невідома помилка'
-
-);
-
 $my_skin_problems = array (
 
 	'title' => "Моє здоров'я",

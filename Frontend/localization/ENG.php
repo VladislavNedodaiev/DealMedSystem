@@ -175,43 +175,6 @@ $save_client_profile = array (
 //
 //
 
-$user_profile = array (
-
-	'profile' => 'Profile',
-	'my_profile' => 'My profile',
-	'register_date' => 'Registered',
-	'email' => 'Email',
-	'nickname' => 'Nickname',
-	'name' => 'Name',
-	'gender' => 'Gender',
-	'female' => 'Female',
-	'male' => 'Male',
-	'phone' => 'Phone',
-	'no_information' => 'No information'
-
-);
-
-$edit_profile = array (
-
-	'edit_profile_title' => 'Edit profile',
-	'save_button_text' => 'Save changes',
-	'cancel_button_text' => 'Cancel changes',
-	'user_nickname_placeholder' => 'Enter nickname',
-	'business_nickname_placeholder' => 'Enter business name',
-	'name_placeholder' => 'Enter your name',
-	'phone_placeholder' => 'Enter phone number',
-	'user_private' => 'This can only be seen by you and account of place, where you are staying'
-
-);
-
-$save_user_profile = array (
-
-	'SUCCESS' => 'Changes saved successfully',
-	'DB_ERROR' => 'Database error occured',
-	'UNKNOWN' => 'Unknown error occured'
-
-);
-
 $my_skin_problems = array (
 
 	'title' => 'My skin problems',
