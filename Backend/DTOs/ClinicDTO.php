@@ -13,7 +13,7 @@ class ClinicDTO
 	public $phone;
 	public $address;
 	public $verification;
-	public $registerDate
+	public $registerDate;
 	
 	// Relations
 	public $rooms;

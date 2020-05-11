@@ -10,9 +10,6 @@ use DealMedSystem\Backend\DTOs\ClinicDTO;
 use DealMedSystem\Backend\Services\ClinicService;
 use DealMedSystem\Backend\Communication\Response;
 
-use DealMedSystem\Backend\DTOs\ClientDTO;
-use DealMedSystem\Backend\Controllers\ClientController;
-
 use DealMedSystem\Backend\DTOs\DoctorDTO;
 use DealMedSystem\Backend\Controllers\DoctorController;
 
@@ -40,7 +37,6 @@ class ClinicController extends Controller
 	private $mailService;
 	private $clinicService;
 	
-	private $clientController;
 	private $doctorController;
 	private $roomController;
 	private $symptomController;
@@ -106,7 +102,6 @@ class ClinicController extends Controller
 
 		);
 		
-		$this->clientController = new ClientController;
 		$this->doctorController = new DoctorController;
 		$this->roomController = new RoomController;
 		$this->symptomController = new SymptomController;
