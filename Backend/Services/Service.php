@@ -29,7 +29,7 @@ class Service
 	
 	protected function connectToDB($host, $user, $pswd, $db) {
 
-		$this->database = new \mysqli($host, $user, $pswd, $db);
+		$this->database = new mysqli($host, $user, $pswd, $db);
 
 		if ($this->database->connect_errno) {
 			return $this->DB_ERROR;
