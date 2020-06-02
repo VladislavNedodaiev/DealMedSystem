@@ -29,9 +29,11 @@ if (!$doctor) {
 	<div class="card" style="width: 70rem;">
 		<div class="card-header">
 			<div class="row">
-				<div class="col-6 my-auto"><?php echo getLocalString('doctor_profile', 'title'); ?></div>
+				<div class="col-6 my-auto">
+					<a href="edit_doctor.php?doctorID=<?php echo $doctor->id; ?>"><i class="fas fa-pencil-alt"></i></a>
+					<?php echo getLocalString('doctor_profile', 'title'); ?>
+				</div>
 				<div class="col text-right my-auto">
-					<div class="col text-right my-auto"><a href="edit_doctor.php?doctorID=<?php echo $doctor->id; ?>"><i class="fas fa-pencil-alt"></i></a></div>
 					<a href="specializations.php?doctorID=<?php echo $doctor->id; ?>"><button type="button" class="btn btn-primary"><?php echo getLocalString('doctor_profile', 'show_specializations'); ?></button></a>
 				</div>
 			</div>

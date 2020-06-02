@@ -28,9 +28,11 @@ if (!$client) {
 	<div class="card" style="width: 70rem;">
 		<div class="card-header">
 			<div class="row">
-				<div class="col-6 my-auto"><?php echo getLocalString('client_profile', 'title'); ?></div>
+				<div class="col-6 my-auto">
+					<a href="edit_client.php?clientID=<?php echo $client->id; ?>"><i class="fas fa-pencil-alt"></i></a>
+					<?php echo getLocalString('client_profile', 'title'); ?>
+				</div>
 				<div class="col text-right my-auto">
-					<div class="col text-right my-auto"><a href="edit_client.php?clientID=<?php echo $client->id; ?>"><i class="fas fa-pencil-alt"></i></a></div>
 					<a href="histories.php?clientID=<?php echo $client->id; ?>"><button type="button" class="btn btn-primary"><?php echo getLocalString('client_profile', 'show_histories'); ?></button></a>
 				</div>
 			</div>

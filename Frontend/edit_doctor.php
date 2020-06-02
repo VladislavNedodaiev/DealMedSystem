@@ -84,7 +84,7 @@ if (!$doctor) {
 						</div>
 					</div>
 					<div class="row m-2 border-bottom">
-						<div class="col-5 my-auto"><h4 class = "text-muted"><i class="far fa-phone"></i> <?php echo getLocalString('doctor_profile', 'phone'); ?>: </h4></div>
+						<div class="col-5 my-auto"><h4 class = "text-muted"><i class="fas fa-phone"></i> <?php echo getLocalString('doctor_profile', 'phone'); ?>: </h4></div>
 						<div class="col p-2"><h4><input type="text" class="form-control" id="phone" name="phone" placeholder="<?php echo getLocalString('edit_profile', 'phone_placeholder'); ?>" value="<?php echo $doctor->phone; ?>"></h4></div>
 					</div>
 				</div>
