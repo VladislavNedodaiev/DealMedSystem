@@ -19,7 +19,7 @@ session_start();
 
 $clinicController = new ClinicController;
 
-echo json_encode($clinicController->register($_POST['email'], $_POST['password'], $_POST['repeat_password'], $_POST['nickname']));
+echo json_encode($clinicController->register($_POST['email'], $_POST['password'], $_POST['repeat_password']));
 exit;
 
 ?>

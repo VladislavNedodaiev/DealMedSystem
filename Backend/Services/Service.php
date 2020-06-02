@@ -26,10 +26,18 @@ class Service
 		$this->connectToDB($host, $user, $pswd, $db);
 	
 	}
+
+	protected function logResponse($response) {
 	
+		$this->logService->logResponse($response);
+	
+		return $response;
+	
+	}
+
 	protected function connectToDB($host, $user, $pswd, $db) {
 
-		$this->database = new mysqli($host, $user, $pswd, $db);
+		$this->database = new \mysqli($host, $user, $pswd, $db);
 
 		if ($this->database->connect_errno) {
 			return $this->DB_ERROR;

@@ -45,8 +45,8 @@ class ClinicService extends Service
 		
 		if ($result = $this->database->query("SELECT `".$this->DB_TABLE."`.* FROM `".$this->DB_TABLE."` WHERE `".$this->DB_TABLE."`.`email`='".$email."';")) {
 			if ($res = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-				//if ($res['verification'])
-					//return $this->UNVERIFIED;
+				if ($res['verification'])
+					return $this->UNVERIFIED;
 				if (password_verify($password, $res['password'])) {
 
 					$dto = new ClinicDTO;
@@ -88,23 +88,24 @@ class ClinicService extends Service
 		$this->database->query("START TRANSACTION;");
 		$this->database->query("SAVEPOINT reg_".$verification.";");
 		
-		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`password`, `email`, `verification`)".
+		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`password`, `email`, `verification`, `register_date`)".
 						   "VALUES (".
 						   "'".password_hash($password, PASSWORD_BCRYPT)."',".
 						   "'".$email."', ".
-						   "'".$verification."');")) {
+						   "'".$verification."',".
+						   "STR_TO_DATE('".date('d/m/Y')."', '%d/%m/%Y'));")) {
 			
-			//if ($this->mailService->sendVerificationEmail($email, $verification) == $this->mailService->SUCCESS->status) {
+			if ($this->mailService->sendVerificationEmail($email, $verification) == $this->mailService->SUCCESS->status) {
 				
 				$this->database->query("COMMIT;");
 				return $this->SUCCESS;
 				
-			//} else {
+			} else {
 				$this->database->query("ROLLBACK TO reg_".$verification.";");
 				$this->database->query("COMMIT;");
 				
 				return $this->EMAIL_UNSENT;
-			//}
+			}
 			
 		}
 		
