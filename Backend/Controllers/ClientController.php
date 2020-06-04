@@ -54,7 +54,7 @@ class ClientController extends Controller
 	
 	}
 	
-	public function createClient($clinicID, $firstName, $secondName, $thirdName, $gender) {
+	public function createClient($clinicID, $gender, $firstName, $secondName, $thirdName) {
 		
 		$this->logService->logMessage("ClientController CreateClient");
 		

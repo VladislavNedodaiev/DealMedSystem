@@ -56,7 +56,7 @@ class DoctorController extends Controller
 	
 	}
 	
-	public function createDoctor($clinicID, $firstName, $secondName, $thirdName, $gender) {
+	public function createDoctor($clinicID, $gender, $firstName, $secondName, $thirdName) {
 		
 		$this->logService->logMessage("DoctorController CreateDoctor");
 		
