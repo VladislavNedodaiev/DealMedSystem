@@ -23,6 +23,9 @@ curl_setopt($channel, CURLOPT_URL, $url);
 curl_setopt($channel, CURLOPT_POST, 1);
 curl_setopt($channel, CURLOPT_POSTFIELDS, http_build_query($_POST));
 
+// Set so curl_exec returns the result instead of outputting it.
+curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
+
 $response = curl_exec($channel);
 curl_close($channel);
 

@@ -33,7 +33,6 @@ $response = curl_exec($channel);
 curl_close($channel);
 
 $response = json_decode($response);
-
 if ($response->status == "SUCCESS") {
 	
 	$_SESSION['msg']['type'] = 'alert-success';
