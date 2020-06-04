@@ -7,7 +7,7 @@ if (!isset($_SESSION['profile']))
 $channel = curl_init();
 
 $api_url = require('scripts/backend_host.php');
-$doctor_url = '/Backend/Doctor/GetByClinic.php?';
+$doctor_url = '/Backend/API/Doctor/GetByClinic.php?';
 
 $clinicID_url = "clinicID=";
 $clinicID_url .= $_SESSION['profile']->id;
