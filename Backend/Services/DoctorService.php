@@ -27,6 +27,7 @@ class DoctorService extends Service
 
 		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`clinic_id`, `gender`, `first_name`, `second_name`, `third_name`)".
 						   "VALUES ('".$dto->clinicID."', ".
+									"'".$dto->gender."', ".
 									"'".$dto->firstName."', ".
 									"'".$dto->secondName."', ".
 									"'".$dto->thirdName."');")) {
