@@ -12,7 +12,7 @@ session_start();
 
 $doctorController = new DoctorController;
 
-echo json_encode($doctorController->createDoctor($_POST['clinicID']));
+echo json_encode($doctorController->createDoctor($_POST['clinicID'], $_POST['gender'], $_POST['firstName'], $_POST['secondName'], $_POST['thirdName']));
 exit;
 
 ?>

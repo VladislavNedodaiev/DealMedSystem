@@ -12,7 +12,7 @@ session_start();
 
 $clientController = new ClientController;
 
-echo json_encode($clientController->createClient($_POST['clinicID']));
+echo json_encode($clientController->createClient($_POST['clinicID'], $_POST['gender'], $_POST['firstName'], $_POST['secondName'], $_POST['thirdName']));
 exit;
 
 ?>
