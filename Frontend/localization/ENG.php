@@ -89,7 +89,8 @@ $edit_profile = array (
 	'second_name_placeholder' => 'Enter second name',
 	'third_name_placeholder' => 'Enter third name',
 	'phone_placeholder' => 'Enter phone number',
-	'description_placeholder' => 'Biography (up to 3000 characters)'
+	'description_placeholder' => 'Biography (up to 3000 characters)',
+	'user_private' => 'This information will be hidden'
 
 );
 
@@ -193,6 +194,34 @@ $remove_doctor = array (
 $add_doctor = array (
 
 	'SUCCESS' => 'Doctor has been successfully added!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$clinic_clients = array (
+
+	'clinic_clients_title' => 'Clients',
+	'add_client' => 'Add client',
+	'no_information' => 'No information',
+	'remove_client_title' => 'Remove client',
+	'remove_client_text' => 'Are you sure you want to remove client?',
+	'add_client_title' => 'Add client',
+	'modal_close' => 'Cancel',
+	'remove_submit' => 'Remove',
+	'add_submit' => 'Add client'
+
+);
+
+$remove_client = array (
+
+	'SUCCESS' => 'Client has been successfully removed!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$add_client = array (
+
+	'SUCCESS' => 'Client has been successfully added!',
 	'UNKNOWN' => 'Unknown error occured'
 
 );
@@ -381,6 +410,9 @@ return array (
 	'clinic_doctors' => $clinic_doctors,
 	'remove_doctor' => $remove_doctor,
 	'add_doctor' => $add_doctor,
+	'clinic_clients' => $clinic_clients,
+	'remove_client' => $remove_client,
+	'add_client' => $add_client,
 	
 	'my_skin_problems' => $my_skin_problems,
 	'skin_problems' => $skin_problems,

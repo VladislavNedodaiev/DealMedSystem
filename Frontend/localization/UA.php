@@ -89,7 +89,8 @@ $edit_profile = array (
 	'second_name_placeholder' => 'Введіть прізвище',
 	'third_name_placeholder' => 'Введіть по батькові',
 	'phone_placeholder' => 'Введіть номер телефону',
-	'description_placeholder' => 'Біографія (не більше 3000 символів)'
+	'description_placeholder' => 'Біографія (не більше 3000 символів)',
+	'user_private' => 'Ця інформація буде прихована'
 
 );
 
@@ -193,6 +194,34 @@ $remove_doctor = array (
 $add_doctor = array (
 
 	'SUCCESS' => 'Ви успішно додали лікаря!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$clinic_clients = array (
+
+	'clinic_clients_title' => 'Клієнти клініки',
+	'add_client' => 'Додати клієнта',
+	'no_information' => 'Інформація відсутня',
+	'remove_client_title' => 'Видалити клієнта',
+	'remove_client_text' => 'Ви впевнені, що хочете видалити клієнта?',
+	'add_client_title' => 'Додати клієнта',
+	'modal_close' => 'Скасувати',
+	'remove_submit' => 'Видалити',
+	'add_submit' => 'Додати клієнта'
+
+);
+
+$remove_client = array (
+
+	'SUCCESS' => 'Ви успішно видалили клієнта!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$add_client = array (
+
+	'SUCCESS' => 'Ви успішно додали клієнта!',
 	'UNKNOWN' => 'Сталася невідома помилка'
 
 );
@@ -381,6 +410,9 @@ return array (
 	'clinic_doctors' => $clinic_doctors,
 	'remove_doctor' => $remove_doctor,
 	'add_doctor' => $add_doctor,
+	'clinic_clients' => $clinic_clients,
+	'remove_client' => $remove_client,
+	'add_client' => $add_client,
 	
 	'my_skin_problems' => $my_skin_problems,
 	'skin_problems' => $skin_problems,

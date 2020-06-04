@@ -44,13 +44,19 @@ if (!$doctor) {
 				<div class="col-3 border-right">
 					<div class="card">
 						<img class="card-img-top" src="<?php if ($doctor->photo && file_exists($doctor->photo)) echo $doctor->photo; else echo "images/doctors/default.jpg" ?>">
+						<?php if (isset($doctor->birthday) || isset($room)) { ?>
 						<div class="card-header text-center">
+							<?php if (isset($doctor->birthday)) { ?>
 							<i class="far fa-calendar-alt"></i><small class = "text-muted"> <?php echo getLocalString('doctor_profile', 'birthday'); ?>: <?php echo substr($doctor->birthday, 0, 10); ?> </small>
+							<?php } ?>
+							<?php if (isset($room)) { ?>
 							<br>
 							<small class = "text-muted"><?php echo getLocalString('doctor_profile', 'cabinet'); ?>: ?>
-								<?php if (isset($room) && $room->title) echo $room->title; else echo getLocalString('doctor_profile', 'no_information'); ?>
+								<?php if ($room->title) echo $room->title; else echo getLocalString('doctor_profile', 'no_information'); ?>
 							</small>
+							<?php } ?>
 						</div>
+						<?php } ?>
 					</div>
 				</div>
 				

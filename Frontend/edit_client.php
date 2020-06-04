@@ -26,7 +26,7 @@ if (!$client) {
 
 <article class="card-body mx-auto">
 	<div class="card" style="width: 70rem;">
-		<form action="scripts/client/save_client_profile.php" method="POST">
+		<form action="scripts/client/save_client_profile.php?clientID=<?php echo $client->id; ?>" method="POST" enctype="multipart/form-data">
 		<div class="card-header">
 			<div class="row">
 				<div class="col-8 my-auto"><?php echo getLocalString('edit_profile', 'edit_profile_title'); ?></div>
@@ -47,13 +47,10 @@ if (!$client) {
 						<label style="margin: -1px" for="photo"><img id="photo_img" class="card-img-top" style="cursor: pointer"
 							src="<?php if ($client->photo && file_exists($client->photo)) echo $client->photo; else echo "images/clients/default.jpg"; ?>"></label>
 						<input type="file" style="display: none" accept="image/png, image/jpeg" class="form-control-file" name="photo" id="photo">
+						<input type="hidden" name="oldphoto" id="oldphoto" style="display:none" value="<?php if ($client->photo && file_exists($client->photo)) echo $client->photo; else echo "images/clients/default.jpg"; ?>">
 						
 						<div class="card-header text-center">
-							<i class="far fa-calendar-alt"></i><small class = "text-muted"> <?php echo getLocalString('client_profile', 'birthday'); ?>: <?php echo substr($client->birthday, 0, 10); ?> </small>
-							<br>
-							<small class = "text-muted"><?php echo getLocalString('client_profile', 'cabinet'); ?>: ?>
-								<?php if (isset($room) && $room->title) echo $room->title; else echo getLocalString('client_profile', 'no_information'); ?>
-							</small>
+							<i class="far fa-calendar-alt"></i><small class = "text-muted"> <?php echo getLocalString('client_profile', 'birthday'); ?>: <input name="birthday" id="birthday" <?php if ($client->birthday) echo "value='".substr($client->birthday, 0, 10)."'"; ?> type="date" required> </small>
 						</div>
 					</div>
 				</div>
@@ -79,7 +76,6 @@ if (!$client) {
 							<option value="-1" <?php if($client->gender < 0) echo 'selected'; ?>><?php echo getLocalString('client_profile', 'female'); ?></option>
 							<option value="1" <?php if($client->gender > 0) echo 'selected'; ?>><?php echo getLocalString('client_profile', 'male'); ?></option>
 						</select>
-						<small class = "text-muted">*<?php echo getLocalString('edit_profile', 'user_private'); ?></small>
 						</div>
 					</div>
 					<div class="row m-2 border-bottom">
