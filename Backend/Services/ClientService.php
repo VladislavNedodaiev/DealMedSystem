@@ -25,12 +25,11 @@ class ClientService extends Service
 		if (!$this->database || $this->database->connect_errno)
 			return $this->DB_ERROR;
 
-		$response = $this->getClientsByIDs($dto->clientID, $dto->clinicID);
-		if ($response->status ==$this->SUCCESS->status)
-			return $response;
-
-		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`clinic_id`)".
-						   "VALUES ('".$dto->clinicID."');")) {
+		if ($this->database->query("INSERT INTO `".$this->DB_TABLE."`(`clinic_id`, `gender`, `first_name`, `second_name`, `third_name`)".
+						   "VALUES ('".$dto->clinicID."', ".
+									"'".$dto->firstName."', ".
+									"'".$dto->secondName."', ".
+									"'".$dto->thirdName."');")) {
 							   
 			$lastID = $this->getLastID();
 			if ($lastID->status ==$this->SUCCESS->status

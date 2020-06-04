@@ -54,15 +54,31 @@ class ClientController extends Controller
 	
 	}
 	
-	public function createClient($clinicID) {
+	public function createClient($clinicID, $firstName, $secondName, $thirdName, $gender) {
 		
 		$this->logService->logMessage("ClientController CreateClient");
 		
 		if (!isset($clinicID))
 			return $this->logResponse($this->NO_CLINICID);
 		
+		if (!isset($gender))
+			return $this->logResponse($this->NO_GENDER);
+		
+		if (!isset($firstName))
+			return $this->logResponse($this->NO_FIRSTNAME);
+		
+		if (!isset($secondName))
+			return $this->logResponse($this->NO_SECONDNAME);
+		
+		if (!isset($thirdName))
+			return $this->logResponse($this->NO_THIRDNAME);
+		
 		$dto = new ClientDTO;
 		$dto->clinicID = $clinicID;
+		$dto->gender = $gender;
+		$dto->firstName = $firstName;
+		$dto->secondName = $secondName;
+		$dto->thirdName = $thirdName;
 		
 		return $this->logResponse($this->clientService->createClient($dto));
 		

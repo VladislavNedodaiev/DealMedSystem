@@ -56,15 +56,31 @@ class DoctorController extends Controller
 	
 	}
 	
-	public function createDoctor($clinicID) {
+	public function createDoctor($clinicID, $firstName, $secondName, $thirdName, $gender) {
 		
 		$this->logService->logMessage("DoctorController CreateDoctor");
 		
 		if (!isset($clinicID))
 			return $this->logResponse($this->NO_CLINICID);
 		
+		if (!isset($gender))
+			return $this->logResponse($this->NO_GENDER);
+		
+		if (!isset($firstName))
+			return $this->logResponse($this->NO_FIRSTNAME);
+		
+		if (!isset($secondName))
+			return $this->logResponse($this->NO_SECONDNAME);
+		
+		if (!isset($thirdName))
+			return $this->logResponse($this->NO_THIRDNAME);
+		
 		$dto = new DoctorDTO;
 		$dto->clinicID = $clinicID;
+		$dto->gender = $gender;
+		$dto->firstName = $firstName;
+		$dto->secondName = $secondName;
+		$dto->thirdName = $thirdName;
 		
 		return $this->logResponse($this->doctorService->createDoctor($dto));
 		
