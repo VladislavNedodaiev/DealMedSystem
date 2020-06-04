@@ -169,6 +169,34 @@ $save_client_profile = array (
 	
 );
 
+$clinic_doctors = array (
+
+	'clinic_doctors_title' => 'Doctors',
+	'add_doctor' => 'Add doctor',
+	'no_information' => 'No information',
+	'remove_doctor_title' => 'Remove doctor',
+	'remove_doctor_text' => 'Are you sure you want to remove doctor?',
+	'add_doctor_title' => 'Add doctor',
+	'modal_close' => 'Cancel',
+	'remove_submit' => 'Remove',
+	'add_submit' => 'Add doctor'
+
+);
+
+$remove_doctor = array (
+
+	'SUCCESS' => 'Doctor has been successfully removed!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$add_doctor = array (
+
+	'SUCCESS' => 'Doctor has been successfully added!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
 //
 //
 // OLD
@@ -350,6 +378,9 @@ return array (
 	'save_doctor_profile' => $save_doctor_profile,
 	'client_profile' => $client_profile,
 	'save_client_profile' => $save_client_profile,
+	'clinic_doctors' => $clinic_doctors,
+	'remove_doctor' => $remove_doctor,
+	'add_doctor' => $add_doctor,
 	
 	'my_skin_problems' => $my_skin_problems,
 	'skin_problems' => $skin_problems,

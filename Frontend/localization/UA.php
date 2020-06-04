@@ -169,6 +169,34 @@ $save_client_profile = array (
 	
 );
 
+$clinic_doctors = array (
+
+	'clinic_doctors_title' => 'Медичний персонал',
+	'add_doctor' => 'Додати лікаря',
+	'no_information' => 'Інформація відсутня',
+	'remove_doctor_title' => 'Видалити лікаря',
+	'remove_doctor_text' => 'Ви впевнені, що хочете видалити лікаря?',
+	'add_doctor_title' => 'Додати лікаря',
+	'modal_close' => 'Скасувати',
+	'remove_submit' => 'Видалити',
+	'add_submit' => 'Додати лікаря'
+
+);
+
+$remove_doctor = array (
+
+	'SUCCESS' => 'Ви успішно видалили лікаря!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$add_doctor = array (
+
+	'SUCCESS' => 'Ви успішно додали лікаря!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
 //
 //
 // OLD
@@ -350,6 +378,9 @@ return array (
 	'save_doctor_profile' => $save_doctor_profile,
 	'client_profile' => $client_profile,
 	'save_client_profile' => $save_client_profile,
+	'clinic_doctors' => $clinic_doctors,
+	'remove_doctor' => $remove_doctor,
+	'add_doctor' => $add_doctor,
 	
 	'my_skin_problems' => $my_skin_problems,
 	'skin_problems' => $skin_problems,
