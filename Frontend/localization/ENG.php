@@ -9,6 +9,7 @@ $header = array (
 	'clinic_button_text' => 'Clinic',
 	'rooms_button_text' => 'Planner',
 	'diseases_button_text' => 'Diseases',
+	'symptoms_button_text' => 'Symptoms',
 	'doctors_button_text' => 'Doctors',
 	'clients_button_text' => 'Clients',
 	'logout_button_text' => 'Logout'
@@ -98,7 +99,9 @@ $edit_profile = array (
 	'height_placeholder' => 'Enter Height (m)',
 	'disease_title_placeholder' => 'Enter disease title',
 	'immunity_placeholder' => 'Enter immunity (0.00 to 1.00)',
-	'disease_description_placeholder' => 'Enter description'
+	'disease_description_placeholder' => 'Enter description',
+	'symptom_title_placeholder' => 'Enter title',
+	'symptom_description_placeholder' => 'Enter description'
 
 );
 
@@ -364,6 +367,83 @@ $add_connection = array (
 
 );
 
+$symptom = array (
+
+	'title' => 'Title',
+	'description' => 'Description'
+
+);
+
+$clinic_symptoms = array (
+
+	'clinic_symptoms_title' => 'Symptoms',
+	'add_symptom' => 'Add symptom',
+	'no_information' => 'No information',
+	'remove_symptom_title' => 'Remove symptom',
+	'remove_symptom_text' => 'Are you sure you want to remove symptom?',
+	'add_symptom_title' => 'Add symptom',
+	'edit_symptom_title' => 'Edit symptom',
+	'modal_close' => 'Cancel',
+	'remove_submit' => 'Remove',
+	'add_submit' => 'Add symptom'
+
+);
+
+$remove_symptom = array (
+
+	'SUCCESS' => 'Symptom has been successfully removed!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$add_symptom = array (
+
+	'SUCCESS' => 'Symptom has been successfully added!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$edit_symptom = array (
+
+	'SUCCESS' => 'Symptom has been successfully edited!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$specialization = array (
+
+	'title' => 'Specialization'
+
+);
+
+$doctor_specializations = array (
+
+	'doctor_specializations_title' => 'Specializations',
+	'add_specialization' => 'Add specialization',
+	'no_information' => 'No information',
+	'remove_specialization_title' => 'Remove specialization',
+	'remove_specialization_text' => 'Are you sure you want to remove specialization?',
+	'add_specialization_title' => 'Add specialization',
+	'modal_close' => 'Cancel',
+	'remove_submit' => 'Remove',
+	'add_submit' => 'Add specialization'
+
+);
+
+$remove_specialization = array (
+
+	'SUCCESS' => 'Specialization has been successfully removed!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$add_specialization = array (
+
+	'SUCCESS' => 'Specialization has been successfully added!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
 return array (
 
 	'header' => $header,
@@ -399,7 +479,16 @@ return array (
 	'connection' => $connection,
 	'room_connections' => $room_connections,
 	'remove_connection' => $remove_connection,
-	'add_connection' => $add_connection
+	'add_connection' => $add_connection,
+	'symptom' => $symptom,
+	'clinic_symptoms' => $clinic_symptoms,
+	'remove_symptom' => $remove_symptom,
+	'add_symptom' => $add_symptom,
+	'edit_symptom' => $edit_symptom,
+	'specialization' => $specialization,
+	'doctor_specializations' => $doctor_specializations,
+	'remove_specialization' => $remove_specialization,
+	'add_specialization' => $add_specialization
 	
 );
 

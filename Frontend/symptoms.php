@@ -3,24 +3,16 @@
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-if (!isset($_GET['doctorID']) || !isset($_SESSION['profile'])) {
+if (!isset($_SESSION['profile'])) {
 	
 	header("Location: index.php");
 	exit;
 	
 }
 
-$doctor = require_once "scripts/doctor/doctor.php";
-$room = require_once "scripts/doctor/room.php";
-if (!$doctor) {
-	
-	header("Location: index.php");
-	exit;
-	
-}
+$account = $_SESSION['profile'];
 
-$doctor_specializations = require_once "scripts/doctor/specializations.php";
-$diseases = require_once "scripts/disease/diseases.php";
+$clinic_symptoms = require_once "scripts/symptom/symptoms.php";
 
 ?>
 
@@ -41,19 +33,16 @@ $diseases = require_once "scripts/disease/diseases.php";
 			<div class="modal-body text-center">
 				<span id="body_text"></span>
 				<input id="input" name="input" type="hidden" value="0">
-				<input id="doctorID" name="doctorID" type="hidden" value="<?php echo $doctor->id; ?>">
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo getLocalString('doctor_specializations', 'modal_close'); ?></button>
-				<input type="submit" id="submit" class="btn btn-danger" value='<?php echo getLocalString('doctor_specializations', 'remove_submit'); ?>'>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal"><?php echo getLocalString('clinic_symptoms', 'modal_close'); ?></button>
+				<input type="submit" id="submit" class="btn btn-danger" value='<?php echo getLocalString('clinic_symptoms', 'remove_submit'); ?>'>
 			</div>
 		</div>
 	</div>
 </div>
 </form>
 
-<?php include "templates/doctor/doctor.php" ?>
-
-<?php include "templates/doctor/specializations.php" ?>
+<?php include "templates/symptom/symptoms.php" ?>
 
 <?php require "templates/footer.php"; ?>

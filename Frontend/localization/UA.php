@@ -9,6 +9,7 @@ $header = array (
 	'clinic_button_text' => 'Клініка',
 	'rooms_button_text' => 'Планування',
 	'diseases_button_text' => 'Захворювання',
+	'symptoms_button_text' => 'Симптоматика',
 	'doctors_button_text' => 'Медичні працівники',
 	'clients_button_text' => 'Клієнти',
 	'logout_button_text' => 'Вийти'
@@ -98,7 +99,9 @@ $edit_profile = array (
 	'height_placeholder' => 'Введіть довжину (м)',
 	'disease_title_placeholder' => 'Введіть назву захворювання',
 	'immunity_placeholder' => 'Введіть стійк. організму (0.00 до 1.00)',
-	'disease_description_placeholder' => 'Введіть опис'
+	'disease_description_placeholder' => 'Введіть опис',
+	'symptom_title_placeholder' => 'Введіть назву',
+	'symptom_description_placeholder' => 'Введіть опис'
 
 );
 
@@ -283,7 +286,6 @@ $edit_room = array (
 
 );
 
-
 $disease = array (
 
 	'title' => 'Назва',
@@ -365,6 +367,83 @@ $add_connection = array (
 
 );
 
+$symptom = array (
+
+	'title' => 'Назва',
+	'description' => 'Опис'
+
+);
+
+$clinic_symptoms = array (
+
+	'clinic_symptoms_title' => 'Симптоми захворювань',
+	'add_symptom' => 'Додати симптом',
+	'no_information' => 'Інформація відсутня',
+	'remove_symptom_title' => 'Видалити симптом',
+	'remove_symptom_text' => 'Ви впевнені, що хочете видалити симптом?',
+	'add_symptom_title' => 'Додати симптом',
+	'edit_symptom_title' => 'Редагувати симптом',
+	'modal_close' => 'Скасувати',
+	'remove_submit' => 'Видалити',
+	'add_submit' => 'Додати симптом'
+	
+);
+
+$remove_symptom = array (
+
+	'SUCCESS' => 'Ви успішно видалили симптом!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$add_symptom = array (
+
+	'SUCCESS' => 'Ви успішно додали симптом!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$edit_symptom = array (
+
+	'SUCCESS' => 'Ви успішно відредагували симптом!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$specialization = array (
+
+	'title' => 'Спеціалізація'
+
+);
+
+$doctor_specializations = array (
+
+	'doctor_specializations_title' => 'Спеціалізації лікаря',
+	'add_specialization' => 'Додати спеціалізацію',
+	'no_information' => 'Інформація відсутня',
+	'remove_specialization_title' => 'Видалити спеціалізацію',
+	'remove_specialization_text' => 'Ви впевнені, що хочете видалити спеціалізацію?',
+	'add_specialization_title' => 'Додати спеціалізацію',
+	'modal_close' => 'Скасувати',
+	'remove_submit' => 'Видалити',
+	'add_submit' => 'Додати спеціалізацію'
+	
+);
+
+$remove_specialization = array (
+
+	'SUCCESS' => 'Ви успішно видалили спеціалізацію!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$add_specialization = array (
+
+	'SUCCESS' => 'Ви успішно додали спеціалізацію!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
 return array (
 
 	'header' => $header,
@@ -400,7 +479,16 @@ return array (
 	'connection' => $connection,
 	'room_connections' => $room_connections,
 	'remove_connection' => $remove_connection,
-	'add_connection' => $add_connection
+	'add_connection' => $add_connection,
+	'symptom' => $symptom,
+	'clinic_symptoms' => $clinic_symptoms,
+	'remove_symptom' => $remove_symptom,
+	'add_symptom' => $add_symptom,
+	'edit_symptom' => $edit_symptom,
+	'specialization' => $specialization,
+	'doctor_specializations' => $doctor_specializations,
+	'remove_specialization' => $remove_specialization,
+	'add_specialization' => $add_specialization
 	
 );
 
