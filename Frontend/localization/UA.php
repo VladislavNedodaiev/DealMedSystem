@@ -444,6 +444,40 @@ $add_specialization = array (
 
 );
 
+$feature = array (
+
+	'title' => 'Симптом'
+
+);
+
+$disease_features = array (
+	
+	'disease_features_title' => 'Симптоми',
+	'add_symptom' => 'Додати симптом',
+	'no_information' => 'Інформація відсутня',
+	'remove_symptom_title' => 'Видалити симптом',
+	'remove_symptom_text' => 'Ви впевнені, що хочете видалити симптом?',
+	'add_symptom_title' => 'Додати симптом',
+	'modal_close' => 'Скасувати',
+	'remove_submit' => 'Видалити',
+	'add_submit' => 'Додати симптом'
+
+);
+
+$remove_feature = array (
+
+	'SUCCESS' => 'Ви успішно видалили симптом хвороби!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$add_feature = array (
+
+	'SUCCESS' => 'Ви успішно додали симптом хвороби!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
 return array (
 
 	'header' => $header,
@@ -488,7 +522,11 @@ return array (
 	'specialization' => $specialization,
 	'doctor_specializations' => $doctor_specializations,
 	'remove_specialization' => $remove_specialization,
-	'add_specialization' => $add_specialization
+	'add_specialization' => $add_specialization,
+	'feature' => $feature,
+	'disease_features' => $disease_features,
+	'remove_feature' => $remove_feature,
+	'add_feature' => $add_feature
 	
 );
 

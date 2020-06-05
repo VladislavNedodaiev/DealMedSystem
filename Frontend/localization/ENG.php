@@ -444,6 +444,40 @@ $add_specialization = array (
 
 );
 
+$feature = array (
+
+	'title' => 'Symptom'
+
+);
+
+$disease_features = array (
+
+	'disease_features_title' => 'Symptoms',
+	'add_symptom' => 'Add symptom',
+	'no_information' => 'No information',
+	'remove_symptom_title' => 'Remove symptom',
+	'remove_symptom_text' => 'Are you sure you want to remove symptom?',
+	'add_symptom_title' => 'Add symptom',
+	'modal_close' => 'Cancel',
+	'remove_submit' => 'Remove',
+	'add_submit' => 'Add symptom'
+
+);
+
+$remove_feature = array (
+
+	'SUCCESS' => 'Symptom has been successfully removed!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$add_feature = array (
+
+	'SUCCESS' => 'Symptom has been successfully added!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
 return array (
 
 	'header' => $header,
@@ -488,7 +522,11 @@ return array (
 	'specialization' => $specialization,
 	'doctor_specializations' => $doctor_specializations,
 	'remove_specialization' => $remove_specialization,
-	'add_specialization' => $add_specialization
+	'add_specialization' => $add_specialization,
+	'feature' => $feature,
+	'disease_features' => $disease_features,
+	'remove_feature' => $remove_feature,
+	'add_feature' => $add_feature
 	
 );
 

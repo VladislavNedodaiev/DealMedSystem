@@ -105,7 +105,6 @@ function addDisease() {
 
 }
 
-
 function editDisease(id, airSpread, title, immunity, description) {
 
 	document.getElementById('form').action = 'scripts/disease/edit_disease.php';
