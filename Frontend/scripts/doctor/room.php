@@ -19,7 +19,6 @@ curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
 $url = $api_url.$cabinet_url;
 curl_setopt($channel, CURLOPT_URL, $url);
 $response = curl_exec($channel);
-curl_close($channel);
 
 $response = json_decode($response);
 if (isset($response->status) && $response->status == 'SUCCESS') {

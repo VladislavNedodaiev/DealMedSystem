@@ -116,7 +116,8 @@ $clinic_profile = array (
 	'address' => 'Address',
 	'title' => 'Title',
 	'phone' => 'Phone',
-	'no_information' => 'No information'
+	'no_information' => 'No information',
+	'rearrange_doctors' => 'Rearrange doctors'
 
 );
 

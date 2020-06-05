@@ -116,7 +116,8 @@ $clinic_profile = array (
 	'address' => 'Адреса',
 	'title' => 'Клініка',
 	'phone' => 'Номер телефону',
-	'no_information' => 'Інформація відсутня'
+	'no_information' => 'Інформація відсутня',
+	'rearrange_doctors' => 'Розподілити лікарів'
 
 );
 

@@ -38,12 +38,12 @@ $response = json_decode($response);
 if ($response->status == "SUCCESS") {
 	
 	$_SESSION['msg']['type'] = 'alert-success';
-	$_SESSION['msg']['text'] = getLocalString('remove_symptom', 'SUCCESS');
+	$_SESSION['msg']['text'] = getLocalString('save_clinic_profile', 'SUCCESS');
 	
 } else {
 	
 	$_SESSION['msg']['type'] = 'alert-danger';
-	$_SESSION['msg']['text'] = getLocalString('remove_symptom', 'UNKNOWN');
+	$_SESSION['msg']['text'] = getLocalString('save_clinic_profile', 'UNKNOWN');
 	
 } 
 

@@ -27,7 +27,7 @@ $account = $_SESSION['profile'];
 					<?php if (isset($account->title)) echo $account->title; else echo getLocalString('clinic_profile', 'title'); ?>
 				</div>
 				<div class="col text-right my-auto">
-					<a href="scripts/clinic/rearrange_doctors.php?clinicID=<?php echo $account->id; ?>"><button type="button" class="btn btn-success"><?php echo getLocalString('clinic', 'rearrange_doctors'); ?></button></a>
+					<a href="scripts/clinic/rearrange_doctors.php?clinicID=<?php echo $account->id; ?>"><button type="button" class="btn btn-success"><?php echo getLocalString('clinic_profile', 'rearrange_doctors'); ?></button></a>
 					<a href="rooms.php"><button type="button" class="btn btn-primary"><?php echo getLocalString('clinic_profile', 'show_rooms'); ?></button></a>
 					<a href="doctors.php"><button type="button" class="btn btn-primary"><?php echo getLocalString('clinic_profile', 'show_doctors'); ?></button></a>
 					<a href="clients.php"><button type="button" class="btn btn-primary"><?php echo getLocalString('clinic_profile', 'show_clients'); ?></button></a>
