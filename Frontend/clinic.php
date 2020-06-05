@@ -22,11 +22,12 @@ $account = $_SESSION['profile'];
 	<div class="card" style="width: 70rem;">
 		<div class="card-header">
 			<div class="row">
-				<div class="col-6 my-auto">
+				<div class="col-3 my-auto">
 					<a href="edit_clinic.php"><i class="fas fa-pencil-alt"></i></a>
 					<?php if (isset($account->title)) echo $account->title; else echo getLocalString('clinic_profile', 'title'); ?>
 				</div>
 				<div class="col text-right my-auto">
+					<a href="scripts/clinic/rearrange_doctors.php?clinicID=<?php echo $account->id; ?>"><button type="button" class="btn btn-success"><?php echo getLocalString('clinic', 'rearrange_doctors'); ?></button></a>
 					<a href="rooms.php"><button type="button" class="btn btn-primary"><?php echo getLocalString('clinic_profile', 'show_rooms'); ?></button></a>
 					<a href="doctors.php"><button type="button" class="btn btn-primary"><?php echo getLocalString('clinic_profile', 'show_doctors'); ?></button></a>
 					<a href="clients.php"><button type="button" class="btn btn-primary"><?php echo getLocalString('clinic_profile', 'show_clients'); ?></button></a>
