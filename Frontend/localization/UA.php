@@ -90,7 +90,12 @@ $edit_profile = array (
 	'third_name_placeholder' => 'Введіть по батькові',
 	'phone_placeholder' => 'Введіть номер телефону',
 	'description_placeholder' => 'Біографія (не більше 3000 символів)',
-	'user_private' => 'Ця інформація буде прихована'
+	'user_private' => 'Ця інформація буде прихована',
+	'room_title_placeholder' => 'Введіть назву приміщення',
+	'x_placeholder' => 'Введіть X позицію (м)',
+	'y_placeholder' => 'Введіть Y позицію (м)',
+	'width_placeholder' => 'Введіть ширину (м)',
+	'height_placeholder' => 'Введіть довжину (м)'
 
 );
 
@@ -222,6 +227,44 @@ $remove_client = array (
 $add_client = array (
 
 	'SUCCESS' => 'Ви успішно додали клієнта!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$clinic_rooms = array (
+
+	'clinic_rooms_title' => 'Приміщення клініки',
+	'add_room' => 'Додати приміщення',
+	'no_information' => 'Інформація відсутня',
+	'remove_room_title' => 'Видалити приміщення',
+	'remove_room_text' => 'Ви впевнені, що хочете видалити приміщення?',
+	'add_room_title' => 'Додати приміщення',
+	'modal_close' => 'Скасувати',
+	'remove_submit' => 'Видалити',
+	'add_submit' => 'Додати приміщення',
+	'isCabinet_title' => 'Чи є приміщення кабінетом?',
+	'notCabinet' => 'Ні, це не кабінет',
+	'isCabinet' => 'Так, це кабінет'
+	
+);
+
+$remove_room = array (
+
+	'SUCCESS' => 'Ви успішно видалили приміщення!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$add_room = array (
+
+	'SUCCESS' => 'Ви успішно додали приміщення!',
+	'UNKNOWN' => 'Сталася невідома помилка'
+
+);
+
+$edit_room = array (
+
+	'SUCCESS' => 'Ви успішно відредагували приміщення!',
 	'UNKNOWN' => 'Сталася невідома помилка'
 
 );
@@ -413,6 +456,10 @@ return array (
 	'clinic_clients' => $clinic_clients,
 	'remove_client' => $remove_client,
 	'add_client' => $add_client,
+	'clinic_rooms' => $clinic_rooms,
+	'remove_room' => $remove_room,
+	'add_room' => $add_room,
+	'edit_room' => $edit_room,
 	
 	'my_skin_problems' => $my_skin_problems,
 	'skin_problems' => $skin_problems,

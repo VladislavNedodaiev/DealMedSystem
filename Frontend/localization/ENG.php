@@ -90,7 +90,12 @@ $edit_profile = array (
 	'third_name_placeholder' => 'Enter third name',
 	'phone_placeholder' => 'Enter phone number',
 	'description_placeholder' => 'Biography (up to 3000 characters)',
-	'user_private' => 'This information will be hidden'
+	'user_private' => 'This information will be hidden',
+	'room_title_placeholder' => 'Enter room title',
+	'x_placeholder' => 'Enter X position (m)',
+	'y_placeholder' => 'Enter Y position (m)',
+	'width_placeholder' => 'Enter Width (m)',
+	'height_placeholder' => 'Enter Height (m)'
 
 );
 
@@ -222,6 +227,44 @@ $remove_client = array (
 $add_client = array (
 
 	'SUCCESS' => 'Client has been successfully added!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$clinic_rooms = array (
+
+	'clinic_rooms_title' => 'Rooms',
+	'add_room' => 'Add room',
+	'no_information' => 'No information',
+	'remove_room_title' => 'Remove room',
+	'remove_room_text' => 'Are you sure you want to remove room?',
+	'add_room_title' => 'Add room',
+	'modal_close' => 'Cancel',
+	'remove_submit' => 'Remove',
+	'add_submit' => 'Add room',
+	'isCabinet_title' => 'Choose whether this is cabinet?',
+	'notCabinet' => 'No, it is not',
+	'isCabinet' => 'Yes is is'
+
+);
+
+$remove_room = array (
+
+	'SUCCESS' => 'Room has been successfully removed!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$add_room = array (
+
+	'SUCCESS' => 'Room has been successfully added!',
+	'UNKNOWN' => 'Unknown error occured'
+
+);
+
+$edit_room = array (
+
+	'SUCCESS' => 'Room has been successfully edited!',
 	'UNKNOWN' => 'Unknown error occured'
 
 );
@@ -413,6 +456,10 @@ return array (
 	'clinic_clients' => $clinic_clients,
 	'remove_client' => $remove_client,
 	'add_client' => $add_client,
+	'clinic_rooms' => $clinic_rooms,
+	'remove_room' => $remove_room,
+	'add_room' => $add_room,
+	'edit_room' => $edit_room,
 	
 	'my_skin_problems' => $my_skin_problems,
 	'skin_problems' => $skin_problems,
