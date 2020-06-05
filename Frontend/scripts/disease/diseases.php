@@ -1,22 +1,22 @@
 <?php
 
-if (!isset($_GET['roomID']) || !isset($_SESSION['profile']))
+if (!isset($_SESSION['profile']))
 	return null;
 
 // Initialize session and set URL.
 $channel = curl_init();
 
 $api_url = require('scripts/backend_host.php');
-$room_url = '/Backend/API/Room/Get.php?';
+$disease_url = '/Backend/API/Disease/GetByClinic.php?';
 
-$roomID_url = "roomID=";
-$roomID_url .= $_GET['roomID'];
+$clinicID_url = "clinicID=";
+$clinicID_url .= $_SESSION['profile']->id;
 
 // Set so curl_exec returns the result instead of outputting it.
 curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
 
 // user problem
-$url = $api_url.$room_url.$roomID_url;
+$url = $api_url.$disease_url.$clinicID_url;
 curl_setopt($channel, CURLOPT_URL, $url);
 $response = curl_exec($channel);
 curl_close($channel);
@@ -25,8 +25,14 @@ $response = json_decode($response);
 
 if (isset($response->status) && $response->status == 'SUCCESS') {
 	
+	$result = array();
+	
 	$response = $response->content;
-	return $response;
+	foreach ($response as &$value) {
+		$result[$value->id] = $value;
+	}
+	
+	return $result;
 		
 }
 

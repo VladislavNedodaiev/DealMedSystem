@@ -33,7 +33,7 @@ if (!$client) {
 				<div class="col text-right my-auto">
 				
 					<button type="submit" class="btn btn-success"><?php echo getLocalString('edit_profile', 'save_button_text'); ?></button>
-					<a href="client.php"><button type="button" class="btn btn-secondary"><?php echo getLocalString('edit_profile', 'cancel_button_text'); ?></button></a>
+					<a href="client.php?clientID=<?php echo $client->id; ?>"><button type="button" class="btn btn-secondary"><?php echo getLocalString('edit_profile', 'cancel_button_text'); ?></button></a>
 				
 				</div>
 			</div>
@@ -58,15 +58,15 @@ if (!$client) {
 				<div class="col">
 					<div class="row m-2 border-bottom">
 						<div class="col-5 my-auto"><h4 class = "text-muted"><?php echo getLocalString('client_profile', 'first_name'); ?>: </h4></div>
-						<div class="col p-2"><h4><input type="text" class="form-control" id="first_name" name="first_name" placeholder="<?php echo getLocalString('edit_profile', 'first_name_placeholder'); ?>" value="<?php echo $client->firstName; ?>"></h4></div>
+						<div class="col p-2"><h4><input type="text" class="form-control" id="firstName" name="firstName" placeholder="<?php echo getLocalString('edit_profile', 'first_name_placeholder'); ?>" value="<?php echo $client->firstName; ?>"></h4></div>
 					</div>
 					<div class="row m-2 border-bottom">
 						<div class="col-5 my-auto"><h4 class = "text-muted"><?php echo getLocalString('client_profile', 'second_name'); ?>: </h4></div>
-						<div class="col p-2"><h4><input type="text" class="form-control" id="second_name" name="second_name" placeholder="<?php echo getLocalString('edit_profile', 'second_name_placeholder'); ?>" value="<?php echo $client->secondName; ?>"></h4></div>
+						<div class="col p-2"><h4><input type="text" class="form-control" id="secondName" name="secondName" placeholder="<?php echo getLocalString('edit_profile', 'second_name_placeholder'); ?>" value="<?php echo $client->secondName; ?>"></h4></div>
 					</div>
 					<div class="row m-2 border-bottom">
 						<div class="col-5 my-auto"><h4 class = "text-muted"><?php echo getLocalString('client_profile', 'third_name'); ?>: </h4></div>
-						<div class="col p-2"><h4><input type="text" class="form-control" id="third_name" name="third_name" placeholder="<?php echo getLocalString('edit_profile', 'third_name_placeholder'); ?>" value="<?php echo $client->thirdName; ?>"></h4></div>
+						<div class="col p-2"><h4><input type="text" class="form-control" id="thirdName" name="thirdName" placeholder="<?php echo getLocalString('edit_profile', 'third_name_placeholder'); ?>" value="<?php echo $client->thirdName; ?>"></h4></div>
 					</div>
 					<div class="row m-2 border-bottom">
 						<div class="col-5 my-auto"><h4 class = "text-muted"><i class="fas fa-transgender-alt"></i> <?php echo getLocalString('client_profile', 'gender'); ?>: </h4></div>

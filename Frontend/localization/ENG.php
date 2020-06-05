@@ -95,7 +95,10 @@ $edit_profile = array (
 	'x_placeholder' => 'Enter X position (m)',
 	'y_placeholder' => 'Enter Y position (m)',
 	'width_placeholder' => 'Enter Width (m)',
-	'height_placeholder' => 'Enter Height (m)'
+	'height_placeholder' => 'Enter Height (m)',
+	'disease_title_placeholder' => 'Enter disease title',
+	'immunity_placeholder' => 'Enter immunity (0.00 to 1.00)',
+	'disease_description_placeholder' => 'Enter description'
 
 );
 
@@ -231,6 +234,16 @@ $add_client = array (
 
 );
 
+$room = array (
+
+	'title' => 'Title',
+	'x' => 'X Position (m)',
+	'y' => 'Y Position (m)',
+	'width' => 'Width (m)',
+	'height' => 'Height (m)'
+
+);
+
 $clinic_rooms = array (
 
 	'clinic_rooms_title' => 'Rooms',
@@ -239,12 +252,13 @@ $clinic_rooms = array (
 	'remove_room_title' => 'Remove room',
 	'remove_room_text' => 'Are you sure you want to remove room?',
 	'add_room_title' => 'Add room',
+	'edit_room_title' => 'Edit room',
 	'modal_close' => 'Cancel',
 	'remove_submit' => 'Remove',
 	'add_submit' => 'Add room',
 	'isCabinet_title' => 'Choose whether this is cabinet?',
 	'notCabinet' => 'No, it is not',
-	'isCabinet' => 'Yes is is'
+	'isCabinet' => 'Yes, is is'
 
 );
 
@@ -269,168 +283,84 @@ $edit_room = array (
 
 );
 
-//
-//
-// OLD
-//
-//
+$disease = array (
 
-$my_skin_problems = array (
-
-	'title' => 'My skin problems',
-	'add_problem' => 'Add skin problem',
-	'add_problem_modal_title' => 'Add skin problem',
-	'add_problem_no_information' => 'Select skin problem',
-	'modal_close' => 'Cancel',
-	'add_problem_modal_submit' => 'Add skin problem',
-	'remove_problem_modal_title' => 'Remove skin problem',
-	'remove_problem_modal_text' => 'Are you sure you want to remove this problem?',
-	'remove_problem_modal_submit' => 'Remove problem',
-	'no_information' => 'No problems found!'
+	'title' => 'Title',
+	'immunity' => 'Immunity to disease',
+	'description' => 'Description'
 
 );
 
-$skin_problems = array (
+$clinic_diseases = array (
 
-	'Atopic Dermatit' => 'Atopic dermatit',
-	'Sun Allergy' => 'Sun allergy',
-	'Water Allergy' => 'Water allergy'
-
-);
-
-$add_skin_problem = array (
-
-	'SUCCESS' => 'The problem has been successfully added',
-	'UNKNOWN' => 'Unknown error occured!'
-
-);
-
-$remove_skin_problem = array (
-
-	'SUCCESS' => 'The problem has been successfully removed',
-	'UNKNOWN' => 'Unknown error occured!'
-
-);
-
-$my_vacations = array (
-
-	'my_past_vacations_title' => 'Past vacations',
+	'clinic_diseases_title' => 'Diseases',
+	'add_disease' => 'Add disease',
 	'no_information' => 'No information',
-	'start_date' => 'Start date',
-	'finish_date' => 'Finish date',
-	'remove_vacation_title' => 'Remove vacation',
-	'remove_current_vacation_text' => 'Are you sure you want to remove current vacation?',
+	'remove_disease_title' => 'Remove disease',
+	'remove_disease_text' => 'Are you sure you want to remove disease?',
+	'add_disease_title' => 'Add disease',
+	'edit_disease_title' => 'Edit disease',
 	'modal_close' => 'Cancel',
 	'remove_submit' => 'Remove',
-	'my_current_vacations_title' => 'Current vacations',
-	'remove_future_vacation_text' => 'Are you sure you want to remove future vacation?',
-	'my_future_vacations_title' => 'Future vacations',
-	'remove_vacationRequest_title' => 'Remove vacation request',
-	'remove_denied_vacationRequest_text' => 'Are you sure you want to remove denied vacation request?',
-	'my_denied_vacationRequests_title' => 'Denied vacation requests',
-	'request_date' => 'Request date',
-	'remove_pending_vacationRequest_text' => 'Are you sure you want to remove pending vacation request?',
-	'my_pending_vacationRequests_title' => 'Pending vacation requests',
-	'add_submit' => 'Send request',
-	'add_pending_vacationRequest' => 'Send vacation request',
-	'add_vacationRequest_title' => 'Send vacation request',
-	'add_pending_vacationRequest_text' => 'Are you sure you want to send vacation request?'
+	'add_submit' => 'Add disease',
+	'isAirSpread_title' => 'Choose whether this is disease is air spread?',
+	'notAirSpread' => 'No, it is not',
+	'isAirSpread' => 'Yes, is is'
 
 );
 
-$remove_vacation = array (
+$remove_disease = array (
 
-	'SUCCESS' => 'The vacation has been successfully removed!',
+	'SUCCESS' => 'Disease has been successfully removed!',
 	'UNKNOWN' => 'Unknown error occured'
 
 );
 
-$add_vacationRequest = array (
+$add_disease = array (
 
-	'SUCCESS' => 'The vacation has been successfully sent!',
+	'SUCCESS' => 'Disease has been successfully added!',
 	'UNKNOWN' => 'Unknown error occured'
 
 );
 
-$remove_vacationRequest = array (
+$edit_disease = array (
 
-	'SUCCESS' => 'The vacation request has been successfully canceled!',
+	'SUCCESS' => 'Disease has been successfully edited!',
 	'UNKNOWN' => 'Unknown error occured'
 
 );
 
-$business_subscriptions = array (
+$connection = array (
 
-	'business_current_subscriptions_title' => 'Current subscriptions',
-	'add_subscription' => 'Add subscription',
-	'device_text' => 'Device',
+	'title' => 'Connect this room to'
+
+);
+
+$room_connections = array (
+
+	'room_connections_title' => 'Connections',
+	'add_connection' => 'Add connection',
 	'no_information' => 'No information',
-	'start_date' => 'Start date',
-	'finish_date' => 'Finish date',
-	'remove_subscription_title' => 'Remove subscription',
-	'remove_subscription_text' => 'Are you sure you want to remove subscription? We will not make a refund.',
-	'add_subscription_title' => 'Add subscription',
-	'edit_subscription_title' => 'Edit subscription',
-	'business_past_subscriptions_title' => 'Past subscriptions',
+	'remove_connection_title' => 'Remove connection',
+	'remove_connection_text' => 'Are you sure you want to remove connection?',
+	'add_connection_title' => 'Add connection',
 	'modal_close' => 'Cancel',
 	'remove_submit' => 'Remove',
-	'add_submit' => 'Subscribe',
-	'edit_submit' => 'Save changes',
-	'no_free_buoys' => "Can't find any free devices!"
+	'add_submit' => 'Add connection'
 
 );
 
-$remove_subscription = array (
+$remove_connection = array (
 
-	'SUCCESS' => 'The subscription has been successfully canceled!',
+	'SUCCESS' => 'Connection has been successfully removed!',
 	'UNKNOWN' => 'Unknown error occured'
 
 );
 
-$add_subscription = array (
+$add_connection = array (
 
-	'SUCCESS' => 'The subscription has been successfully added!',
+	'SUCCESS' => 'Connection has been successfully added!',
 	'UNKNOWN' => 'Unknown error occured'
-
-);
-
-$edit_subscription = array (
-
-	'SUCCESS' => 'The subscription has been successfully edited!',
-	'UNKNOWN' => 'Unknown error occured'
-
-);
-
-$buoy = array (
-
-	'device_title' => 'Device',
-	'battery' => 'Battery level',
-	'connection_date' => 'Last connected on',
-	'owner' => 'Owner',
-	'no_information' => 'No information',
-	'fabrication_date' => 'Date of fabrication',
-	'latitude' => 'Latitude',
-	'longitude' => 'Longitude',
-	'air_title' => 'Air data',
-	'temperature' => 'Temperature',
-	'bad' => 'Bad',
-	'good' => 'Good',
-	'air_pollution' => 'Air pollution',
-	'water_title' => 'Water data',
-	'water_pH' => 'Level of pH',
-	'water_component' => 'Component',
-	'water_content' => 'Water content',
-	'weather_title' => 'Weather data',
-	'weather_wind_speed' => 'Wind speed'
-
-);
-
-$businesses = array (
-
-	'filter_title' => 'Filtration',
-	'filter_active_check' => 'Only with active devices',
-	'filter_search_placeholder' => 'Enter to search',
-	'filter_submit' => 'Apply settings'
 
 );
 
@@ -456,25 +386,20 @@ return array (
 	'clinic_clients' => $clinic_clients,
 	'remove_client' => $remove_client,
 	'add_client' => $add_client,
+	'room' => $room,
 	'clinic_rooms' => $clinic_rooms,
 	'remove_room' => $remove_room,
 	'add_room' => $add_room,
 	'edit_room' => $edit_room,
-	
-	'my_skin_problems' => $my_skin_problems,
-	'skin_problems' => $skin_problems,
-	'add_skin_problem' => $add_skin_problem,
-	'remove_skin_problem' => $remove_skin_problem,
-	'my_vacations' => $my_vacations,
-	'remove_vacation' => $remove_vacation,
-	'add_vacationRequest' => $add_vacationRequest,
-	'remove_vacationRequest' => $remove_vacationRequest,
-	'business_subscriptions' => $business_subscriptions,
-	'remove_subscription' => $remove_subscription,
-	'add_subscription' => $add_subscription,
-	'edit_subscription' => $edit_subscription,
-	'buoy' => $buoy,
-	'businesses' => $businesses
+	'disease' => $disease,
+	'clinic_diseases' => $clinic_diseases,
+	'remove_disease' => $remove_disease,
+	'add_disease' => $add_disease,
+	'edit_disease' => $edit_disease,
+	'connection' => $connection,
+	'room_connections' => $room_connections,
+	'remove_connection' => $remove_connection,
+	'add_connection' => $add_connection
 	
 );
 

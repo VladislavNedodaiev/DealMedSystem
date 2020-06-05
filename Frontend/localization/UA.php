@@ -95,7 +95,10 @@ $edit_profile = array (
 	'x_placeholder' => 'Введіть X позицію (м)',
 	'y_placeholder' => 'Введіть Y позицію (м)',
 	'width_placeholder' => 'Введіть ширину (м)',
-	'height_placeholder' => 'Введіть довжину (м)'
+	'height_placeholder' => 'Введіть довжину (м)',
+	'disease_title_placeholder' => 'Введіть назву захворювання',
+	'immunity_placeholder' => 'Введіть стійк. організму (0.00 до 1.00)',
+	'disease_description_placeholder' => 'Введіть опис'
 
 );
 
@@ -231,6 +234,16 @@ $add_client = array (
 
 );
 
+$room = array (
+
+	'title' => 'Назва',
+	'x' => 'X Позиція (м)',
+	'y' => 'Y Позиція (м)',
+	'width' => 'Ширина (м)',
+	'height' => 'Довжина (м)'
+
+);
+
 $clinic_rooms = array (
 
 	'clinic_rooms_title' => 'Приміщення клініки',
@@ -239,6 +252,7 @@ $clinic_rooms = array (
 	'remove_room_title' => 'Видалити приміщення',
 	'remove_room_text' => 'Ви впевнені, що хочете видалити приміщення?',
 	'add_room_title' => 'Додати приміщення',
+	'edit_room_title' => 'Редагувати приміщення',
 	'modal_close' => 'Скасувати',
 	'remove_submit' => 'Видалити',
 	'add_submit' => 'Додати приміщення',
@@ -269,168 +283,85 @@ $edit_room = array (
 
 );
 
-//
-//
-// OLD
-//
-//
 
-$my_skin_problems = array (
+$disease = array (
 
-	'title' => "Моє здоров'я",
-	'add_problem' => 'Додати хворобу',
-	'add_problem_modal_title' => 'Додати хворобу',
-	'add_problem_no_information' => 'Оберіть хворобу',
-	'modal_close' => 'Скасувати',
-	'remove_problem_modal_title' => 'Видалити хворобу',
-	'remove_problem_modal_text' => 'Ви впевнені, що хочете прибрати цю хворобу з вашого профілю?',
-	'remove_problem_modal_submit' => 'Видалити хворобу',
-	'add_problem_modal_submit' => 'Додати',
-	'no_information' => 'Не знайдено жодної проблеми!'
+	'title' => 'Назва',
+	'immunity' => 'Імунітет до захворювання',
+	'description' => 'Опис'
 
 );
 
-$skin_problems = array (
+$clinic_diseases = array (
 
-	'Atopic Dermatit' => 'Атопічний дерматит',
-	'Sun Allergy' => 'Алергія на сонце',
-	'Water Allergy' => 'Алергія на воду'
-
-);
-
-$add_skin_problem = array (
-
-	'SUCCESS' => 'Захворювання додано до вашого профілю',
-	'UNKNOWN' => 'Сталася невідома помилка!'
-
-);
-
-$remove_skin_problem = array (
-
-	'SUCCESS' => 'Захворювання видалено з вашого профілю',
-	'UNKNOWN' => 'Сталася невідома помилка!'
-
-);
-
-$my_vacations = array (
-
-	'my_past_vacations_title' => 'Минулі відпочинки',
+	'clinic_diseases_title' => 'Захворювання клініки',
+	'add_disease' => 'Додати захворювання',
 	'no_information' => 'Інформація відсутня',
-	'start_date' => 'Дата початку',
-	'finish_date' => 'Дата завершення',
-	'remove_vacation_title' => 'Видалити відпочинок',
-	'remove_current_vacation_text' => 'Ви впевнені, що хочете видалити поточний відпочинок?',
+	'remove_disease_title' => 'Видалити захворювання',
+	'remove_disease_text' => 'Ви впевнені, що хочете видалити захворювання?',
+	'add_disease_title' => 'Додати захворювання',
+	'edit_disease_title' => 'Редагувати захворювання',
 	'modal_close' => 'Скасувати',
 	'remove_submit' => 'Видалити',
-	'my_current_vacations_title' => 'Поточні відпочинки',
-	'remove_future_vacation_text' => 'Ви впевнені, що хочете видалити майбутній відпочинок?',
-	'my_future_vacations_title' => 'Майбутні відпочинки',
-	'remove_vacationRequest_title' => 'Видалити запит на відпочинок',
-	'remove_denied_vacationRequest_text' => 'Ви впевнені, що хочете видалити відхилений запит на відпочинок?',
-	'my_denied_vacationRequests_title' => 'Відхилені запити на відпочинок',
-	'request_date' => 'Дата запиту',
-	'remove_pending_vacationRequest_text' => 'Ви впевнені, що хочете видалити запит на відпочинок, який очікує на відповідь?',
-	'my_pending_vacationRequests_title' => 'Запити на відпочинок в очікуванні',
-	'add_submit' => 'Надіслати запит',
-	'add_pending_vacationRequest' => 'Надіслати запит на відпочинок',
-	'add_vacationRequest_title' => 'Надіслати запит на відпочинок',
-	'add_pending_vacationRequest_text' => 'Ви впевнені, що хочете надіслати запит на відпочинок?'
-
+	'add_submit' => 'Додати захворювання',
+	'isAirSpread_title' => 'Чи передається пов.-крап. шляхами?',
+	'notAirSpread' => 'Ні, не передається',
+	'isAirSpread' => 'Так, передається'
+	
 );
 
-$remove_vacation = array (
+$remove_disease = array (
 
-	'SUCCESS' => 'Відпочинок успішно видалено!',
+	'SUCCESS' => 'Ви успішно видалили захворювання!',
 	'UNKNOWN' => 'Сталася невідома помилка'
 
 );
 
-$add_vacationRequest = array (
+$add_disease = array (
 
-	'SUCCESS' => 'Запит на відпочинок надіслано!',
+	'SUCCESS' => 'Ви успішно додали захворювання!',
 	'UNKNOWN' => 'Сталася невідома помилка'
 
 );
 
-$remove_vacationRequest = array (
+$edit_disease = array (
 
-	'SUCCESS' => 'Запит на відпочинок було успішно скасовано!',
+	'SUCCESS' => 'Ви успішно відредагували захворювання!',
 	'UNKNOWN' => 'Сталася невідома помилка'
 
 );
 
-$business_subscriptions = array (
+$connection = array (
 
-	'business_current_subscriptions_title' => 'Поточні підписки',
-	'add_subscription' => 'Оформити підписку',
-	'device_text' => 'Пристрій',
+	'title' => 'Має прохід до'
+
+);
+
+$room_connections = array (
+
+	'room_connections_title' => 'Входи та виходи кімнати',
+	'add_connection' => 'Додати прохід',
 	'no_information' => 'Інформація відсутня',
-	'start_date' => 'Дата початку',
-	'finish_date' => 'Дата завершення',
-	'remove_subscription_title' => 'Скасувати підписку',
-	'remove_subscription_text' => 'Ви впевнені, що хочете скасувати дану підписку? Ми не зможемо повернути Вам кошти.',
-	'add_subscription_title' => 'Оформлення підписки',
-	'edit_subscription_title' => 'Редагування підписки',
-	'business_past_subscriptions_title' => 'Попередні підписки',
+	'remove_connection_title' => 'Видалити прохід',
+	'remove_connection_text' => 'Ви впевнені, що хочете видалити прохід?',
+	'add_connection_title' => 'Додати прохід',
 	'modal_close' => 'Скасувати',
 	'remove_submit' => 'Видалити',
-	'add_submit' => 'Оформити',
-	'edit_submit' => 'Зберегти зміни',
-	'no_free_buoys' => 'Не знайдено вільних пристроїв!'
-
+	'add_submit' => 'Додати прохід'
+	
 );
 
-$remove_subscription = array (
+$remove_connection = array (
 
-	'SUCCESS' => 'Підписку скасовано!',
+	'SUCCESS' => 'Ви успішно видалили прохід!',
 	'UNKNOWN' => 'Сталася невідома помилка'
 
 );
 
-$add_subscription = array (
+$add_connection = array (
 
-	'SUCCESS' => 'Підписку оформлено!',
+	'SUCCESS' => 'Ви успішно додали прохід!',
 	'UNKNOWN' => 'Сталася невідома помилка'
-
-);
-
-$edit_subscription = array (
-
-	'SUCCESS' => 'Зміни застосовано!',
-	'UNKNOWN' => 'Сталася невідома помилка'
-
-);
-
-$buoy = array (
-
-	'device_title' => 'Пристрій',
-	'battery' => 'Рівень заряду батареї',
-	'connection_date' => 'Останнє підключення',
-	'owner' => 'Власник',
-	'no_information' => 'Інформація відсутня',
-	'fabrication_date' => 'Дата виробництва',
-	'latitude' => 'Широта',
-	'longitude' => 'Довгота',
-	'air_title' => 'Дані про повітря',
-	'temperature' => 'Температура',
-	'bad' => 'Погано',
-	'good' => 'Добре',
-	'air_pollution' => 'Забрудненість повітря',
-	'water_title' => 'Дані про воду',
-	'water_pH' => 'Рівень pH',
-	'water_component' => 'Компонент',
-	'water_content' => 'Склад води',
-	'weather_title' => 'Дані про погоду',
-	'weather_wind_speed' => 'Швидкість вітру'
-
-);
-
-$businesses = array (
-
-	'filter_title' => 'Фільтрація',
-	'filter_active_check' => 'Тільки з активними пристроями',
-	'filter_search_placeholder' => 'Введіть для пошуку',
-	'filter_submit' => 'Застосувати'
 
 );
 
@@ -456,25 +387,20 @@ return array (
 	'clinic_clients' => $clinic_clients,
 	'remove_client' => $remove_client,
 	'add_client' => $add_client,
+	'room' => $room,
 	'clinic_rooms' => $clinic_rooms,
 	'remove_room' => $remove_room,
 	'add_room' => $add_room,
 	'edit_room' => $edit_room,
-	
-	'my_skin_problems' => $my_skin_problems,
-	'skin_problems' => $skin_problems,
-	'add_skin_problem' => $add_skin_problem,
-	'remove_skin_problem' => $remove_skin_problem,
-	'my_vacations' => $my_vacations,
-	'remove_vacation' => $remove_vacation,
-	'add_vacationRequest' => $add_vacationRequest,
-	'remove_vacationRequest' => $remove_vacationRequest,
-	'business_subscriptions' => $business_subscriptions,
-	'remove_subscription' => $remove_subscription,
-	'add_subscription' => $add_subscription,
-	'edit_subscription' => $edit_subscription,
-	'buoy' => $buoy,
-	'businesses' => $businesses
+	'disease' => $disease,
+	'clinic_diseases' => $clinic_diseases,
+	'remove_disease' => $remove_disease,
+	'add_disease' => $add_disease,
+	'edit_disease' => $edit_disease,
+	'connection' => $connection,
+	'room_connections' => $room_connections,
+	'remove_connection' => $remove_connection,
+	'add_connection' => $add_connection
 	
 );
 

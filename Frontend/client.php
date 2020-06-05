@@ -43,7 +43,7 @@ if (!$client) {
 				<div class="col-3 border-right">
 					<div class="card">
 						<img class="card-img-top" src="<?php if ($client->photo && file_exists($client->photo)) echo $client->photo; else echo "images/clients/default.jpg" ?>">
-						<?php if (isset($doctor->birthday)) { ?>
+						<?php if (isset($client->birthday)) { ?>
 						<div class="card-header text-center">
 							<i class="far fa-calendar-alt"></i><small class = "text-muted"> <?php echo getLocalString('client_profile', 'birthday'); ?>: <?php echo substr($client->birthday, 0, 10); ?> </small>
 						</div>

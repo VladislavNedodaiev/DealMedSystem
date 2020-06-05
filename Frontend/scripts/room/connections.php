@@ -7,16 +7,16 @@ if (!isset($_GET['roomID']) || !isset($_SESSION['profile']))
 $channel = curl_init();
 
 $api_url = require('scripts/backend_host.php');
-$room_url = '/Backend/API/Room/Get.php?';
+$connection_url = '/Backend/API/Connection/GetByRoomFrom.php?';
 
-$roomID_url = "roomID=";
-$roomID_url .= $_GET['roomID'];
+$roomFromID_url = "roomFromID=";
+$roomFromID_url .= $_GET['roomID'];
 
 // Set so curl_exec returns the result instead of outputting it.
 curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
 
 // user problem
-$url = $api_url.$room_url.$roomID_url;
+$url = $api_url.$connection_url.$roomFromID_url;
 curl_setopt($channel, CURLOPT_URL, $url);
 $response = curl_exec($channel);
 curl_close($channel);
@@ -25,8 +25,14 @@ $response = json_decode($response);
 
 if (isset($response->status) && $response->status == 'SUCCESS') {
 	
+	$result = array();
+	
 	$response = $response->content;
-	return $response;
+	foreach ($response as &$value) {
+		$result[$value->id] = $value;
+	}
+	
+	return $result;
 		
 }
 
